@@ -1,0 +1,51 @@
+body {
+    background-image: url(pizza-4952508_1920.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: serif;
+}
+
+#webcontent {
+    background: white;
+    width: 80%;
+    padding: 40px;
+    margin: 100px auto;
+}
+
+#ueber_uns {
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0 0 0px;
+}
+
+h2 {
+    font-variant: small-caps;
+    text-decoration: underline;
+    text-align: center;
+}
+
+hr {
+    width: 70%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    border-collapse: collapse;
+    text-align: left;
+}
+table {
+    width: 100%;
+}
+
+.runder_rand{
+    background: #ff0;
+    color: #000;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 25px;
+}

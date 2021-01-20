@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div id='webcontent'>
+        <div id="bestellen">
+            <h2>Bestellen</h2>
+            <p>Bitte beachten sie, dass aufgrund der Covid19 Krise Lieferzeiten evtl nicht eingehalten werden können.</p>
+
+            <ul>
+                <li>Ab 10$ Besetllwert, kostenloser Versand</li>
+                <li>Ab 5$  Besetllwert, 50% Versandkosten</li>
+                <li>Unter 5§ Bestellwert, keine Erstattung</li>
+            </ul>
+            <hr>
+        </div>
+        <div id='PizzaBestellen'>
+            <form action="form.html" method="GET">
+                
+                <div id='aus_der_Karte_wählen'>
+
+                    <h3>Bestelle hier eine Pizza aus der Speisekarte.</h3>
+                    <p>Welche Pizza möchtest Du bestellen?</p>
+
+                    <select name="pizza_wählen" id="pizza_wählen">
+                        <option value="margherita">Margherita</option>
+                        <option value="salami">Salami</option>
+                        <option value="thunfisch">Thunfisch</option>
+                        <option value="special">Special</option>
+                        <option value="hawaii">Hawaii</option>
+                    </select>
+                    
+                </div>
+                
+                <br>
+
+                <div id='durchmesser_wählen'>
+
+                    <p>Wie groß soll die Pizza sein?</p>
+                    
+                    <label for="gr1">26cm:</label>
+                    <input type='radio' name='durchmesser' id='gr1' value='gr1'><br>
+                    <label for="gr2">32cm:</label>
+                    <input type='radio' name='durchmesser' id='gr2' value='gr2'><br>
+                    <label for="gr3">38cm:</label>
+                    <input type='radio' name='durchmesser' id='gr3' value='gr3'><br>
+
+                </div>
+                
+                <br>
+
+                <div id='abschicken'>
+                    <input type="submit" value='Bestellen'>
+                </div>
+
+            </form>
+        </div>
+
+        <hr>
+
+        <div id='eigene_Pizza_zusammenstellen'>
+            <form action="form.html" method="GET">
+                <h3>Hier kannst Du deine eigene Pizza kreieren!</h3>
+                <div id="zutaten_waehlen">
+                    <p>Welche Zutaten soll Deine Pizza enthalten?</p>
+                    
+                    <input type="checkbox" name='zutat' value='salami' id='salami'><label for="Salami">Salami</label><br>
+                    <input type="checkbox" name='zutat' value='extra-kaese' id='extra-kaese'><label for="extra_kaese">Extra Käse</label><br>
+                    <input type="checkbox" name='zutat' value='peperoni' id='peperoni'><label for="peperoni">Peperoni</label><br>
+                    <input type="checkbox" name='zutat' value='zwiebeln' id='zwiebeln'><label for="zwiebeln">Zwiebeln</label><br>
+                    <input type="checkbox" name='zutat' value='schinken' id='schinken'><label for="schinken">Schinken</label><br>
+                    <input type="checkbox" name='zutat' value='rucola' id='rucola'><label for="rucola">Rucola</label><br>
+                    <input type="checkbox" name='zutat' value='kaese_rand' id='kaese_rand'><label for="kaese_rand">Käse-Rand</label><br>
+                </div>
+                <br>
+                <div id='abschicken2'>
+                    <input type="submit" value='Bestellen' class="runder_rand">
+                </div>
+            </form>
+        </div>
+
+        <hr>
+
+        <div id="kontakt">
+            <table>
+                <tr>
+                    <th colspan="2"><h2>Kontakt</h2></th>
+                </tr>
+                <tr>
+                    <td>Hauptsitz</td>
+                    <td>jgklaöfjklaödjlasöf</td>
+                </tr>
+                <tr>
+                    <td>Telefon</td>
+                    <td>0692847234</td>
+                </tr>
+                <tr>
+                    <td>E-Mail</td>
+                    <td>isdjooawi@yahoo.de</td>
+                </tr>
+                <tr>
+                    <td>Fax</td>
+                    <td>uoshfnclsnofnlfn</td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <div id="impressum">
+            <h2>Impressum</h2>
+            <p>Frankafurt</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
