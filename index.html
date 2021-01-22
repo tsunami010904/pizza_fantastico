@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Pizza Fantastico</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pizza Fantastico</title>
     <link rel="stylesheet" href="style1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
@@ -12,7 +11,7 @@
     <div id='webcontent'>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
             <div class="container-xl">
-              <a class="navbar-brand" href="index.html"><img src='Pizza_slice_icon.png' alt='Pizza icon'/> Pizza Fantastico</a>
+              <a class="navbar-brand" href="index.html"><img src='Pizza_slice_icon.png' alt='Pizza icon'/>Pizza Fantastico</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -20,7 +19,10 @@
               <div class="collapse navbar-collapse" id="navbarsExample07XL">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" aria-current="page" href="ueber_uns.html">Über uns</a>
+                            <a class="nav-link" aria-current="page" href="about_us.html">Über uns</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="ueber_uns.html">Über uns (alt)</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Speisekarte</a>
@@ -34,8 +36,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Bestellen</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                                <li><a class="dropdown-item" href="bestellen.html">Aus der Speisekarte</a></li>
-                                <li><a class="dropdown-item" href="bestellen.html">Eigene Kreation</a></li>
+                                <li><a class="dropdown-item" href="bestellen.html#PizzaBestellen">Aus der Speisekarte</a></li>
+                                <li><a class="dropdown-item" href="bestellen.html#eigene_Pizza_zusammenstellen">Eigene Kreation</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -62,7 +64,7 @@
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1>Über 30 Standorte</h1>
-                            <p>Besuchen Sie unsere Restaurants und genießen Sie ihre Pizza in angenehmer und ruhiger Atmosphäre.</p>
+                            <p>Besuchen Sie unsere Restaurants und genießen Sie Ihre Pizza in angenehmer und ruhiger Atmosphäre, sofern Covid-19 keine große Gefahr mehr darstellt.</p>
                             <p><a class="btn btn-lg btn-primary" href="#" role="button">Zur Bildergalerie</a></p>
                         </div>
                     </div>
@@ -72,9 +74,9 @@
                     <div class="myBackgroundImages" style="background-image: url(pict5.jpg);"></div>
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>[Zu bearbeitender Container]</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            <h1>Bunte Vielfalt</h1>
+                            <p>Stöbern Sie durch unsere Speisekarte und finden Sie Ihre Lieblingspizza - oder erstellen Sie sich Ihre eigene nach Ihren Wünschen!</p>
+                            <p><a class="btn btn-lg btn-primary" href="speisekarte.html" role="button">Zur Speisekarte</a></p>
                         </div>
                     </div>
               </div>
@@ -85,7 +87,7 @@
                         <div class="carousel-caption text-end">
                             <h1>Kontaktlose Lieferung</h1>
                             <p>Dank unseres Partners Lieferando wird Ihre Pizza zuverlässig zugestellt.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Besuche lieferando.de</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="https://www.lieferando.de" target='_blank' role="button">Besuche lieferando.de</a></p>
                         </div>
                     </div>
               </div>
@@ -106,26 +108,27 @@
 
             <!-- Three columns of text below the carousel -->
             <div class="row">
-              <div class="col-lg-4">
-                <div><img src="pict7.jpg" alt="cook" class="iconPictures"></div>
-        
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+              <div class="col-lg-4 mittelding">
+                    <img src="pict9.jpg" alt="oven" class="iconPictures">
+            
+                    <h2>Seit 1872</h2>
+                    <p>Über Generationen sind traditionelle Rezepte entstanden. Unsere Pizzen werden noch heute in Steinöfen gebacken.</p>
+                    <p><a class="btn btn-secondary" href="about_us.html" role="button">Über uns »</a></p>
+                    <p><a class="btn btn-secondary" href="ueber_uns.html" role="button">Über uns (alt) »</a></p>
               </div><!-- /.col-lg-4 -->
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        
-                <h2>Heading</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+              <div class="col-lg-4 mittelding">
+                   <img src="pict8.jpg" alt="virus" class="iconPictures">
+            
+                    <h2>Covid-19</h2>
+                    <p>Wegen des Corona-Virus ist es leider nicht möglich, vor Ort zu essen. Ihre Bestellung wird in unseren Restaurants zur Abholung oder zur Lieferung zubereitet.</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">Weitere Infos »</a></p>
               </div><!-- /.col-lg-4 -->
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+              <div class="col-lg-4 mittelding">
+                    <img src="pict7.jpg" alt="cook" class="iconPictures">
+            
+                    <h2>Auf Jobsuche?</h2>
+                    <p>Beginnen Sie Ihre Karriere bei Pizza Fantastico! Abwechslungsreiche Tätigkeiten, flexible Arbeitszeiten und freundliche Kollegen warten auf Sie! </p>
+                    <p><a class="btn btn-secondary" href="#" role="button">Ihre Möglichkeiten »</a></p>
               </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
         
@@ -133,22 +136,11 @@
             <!-- START THE FEATURETTES -->
         
             <hr class="featurette-divider">
-        
+            <!--Diesen Teil habe ich (Minh Thai) gelöscht.-->
             <hr class="featurette-divider">
         
             <!-- /END THE FEATURETTES -->
         
-          </div>
-
-        <h1>Inhaltsverzeichnis</h1>
-        <div>
-            <ul>
-                <li><a href="ueber_uns.html" target="_parent">Über Uns</a></li>
-                <li><a href="speisekarte.html" target="_parent">Speisekarte</a></li>
-                <li><a href="bestellen_karte.html" target="_parent">Bestellen</a></li>
-                <li><a href="#kontakt" target="_parent">Kontakt</a></li>
-                <li><a href="#impressum" target="_parent">Impressum</a></li>
-            </ul>
         </div>
         
         <hr>
