@@ -1,0 +1,111 @@
+body {
+    background-image: url(pizza-4952508_1920.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: serif;
+}
+
+#webcontent {
+    background: white;
+    width: 80%;
+    padding: 40px;
+    margin: 100px auto;
+}
+
+#ueber_uns {
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0 0 0px;
+}
+
+hr {
+    width: 70%;
+}
+
+table, th, td {
+    border: none;
+    padding: 5px;
+}
+table {
+    width: 100%;
+    text-align: center;
+}
+
+.runder_rand{
+    background: #ff0;
+    color: #000;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 25px;
+}
+
+.carousel-item {
+    height: 32rem;
+    background: #000;
+    position: relative;
+}
+
+.myBackgroundImages {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.35;
+}
+
+.iconPictures {
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+}
+
+.mittelding {
+    text-align: center;
+}
+
+.footerHorizon {
+    width: 90%;
+    height: 5px !important;
+}
+
+.size30 {
+    font-size: 30px;
+}
+
+.meineQuote {
+    font-style: italic;
+}
+
+.kontaktGanz {
+    margin-top: -50px !important;
+    margin-left: -30% !important;
+}
+
+.kontaktLinks {
+
+}
+
+.kontaktLinks {}
+
+a:link.whiteLink {
+    color: white;
+    text-decoration: underline;
+}
+
+a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
+    color: rgba(255, 255, 255, 0.562);
+    text-decoration: none;
+}
+
+.graySection {
+    background: white;
+    padding: 40px;
+    margin: 100px auto
+}
