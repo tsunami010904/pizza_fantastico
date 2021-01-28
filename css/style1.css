@@ -1,19 +1,5 @@
 body {
-    background-image: url(pizza-4952508_1920.jpg);
-    background-size: cover;
-    background-attachment: fixed;
     font-family: serif;
-}
-
-#webcontent {
-    background: white;
-    width: 80%;
-    padding: 40px;
-    margin: 100px auto;
-}
-
-#ueber_uns {
-    text-align: left;
 }
 
 h1 {
@@ -22,9 +8,6 @@ h1 {
     margin: 0 0 0px;
 }
 
-hr {
-    width: 70%;
-}
 
 table, th, td {
     border: none;
@@ -33,14 +16,6 @@ table, th, td {
 table {
     width: 100%;
     text-align: center;
-}
-
-.runder_rand{
-    background: #ff0;
-    color: #000;
-    border: 2px solid black;
-    outline: none;
-    border-radius: 25px;
 }
 
 .carousel-item {
@@ -107,5 +82,5 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
 .graySection {
     background: white;
     padding: 40px;
-    margin: 100px auto
+    margin: 100px auto;
 }
