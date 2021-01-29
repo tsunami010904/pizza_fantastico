@@ -58,17 +58,6 @@ table {
     font-style: italic;
 }
 
-.kontaktGanz {
-    margin-top: -50px !important;
-    margin-left: -30% !important;
-}
-
-.kontaktLinks {
-
-}
-
-.kontaktLinks {}
-
 a:link.whiteLink {
     color: white;
     text-decoration: underline;
@@ -79,7 +68,7 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
     text-decoration: none;
 }
 
-.graySection {
+.whiteSection {
     background: white;
     padding: 40px;
     margin: 100px auto;

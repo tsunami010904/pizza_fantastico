@@ -1,6 +1,7 @@
 <?php
 
-$aboutSlider = readSliderElements(); // get the array for the slider in the about-section
+$bigSlider = readSliderElements('bigSlider.csv'); // get the array for the slider in the bigSlider-section
+$galerySlider = readSliderElements('mySliders.csv'); // get the array for the slider in the galery-section
 
 $pizza = [
     [
@@ -109,17 +110,67 @@ print '<!doctype html>
                     <br/>
                     <p class="animated fadeInLeft object-restaurant-description-2">Herzlich Willkommen</p>
                 </div>
-                <a href="#about" class="more scrolly">Unsere Öffnungszeiten</a>
+                <a href="#bigSlider" class="more scrolly">Unsere Öffnungszeiten</a>
             </section>
 
-            <div class="graySection">
-                <!-- about section -->
-                <section id="about_us">
+            <div class="whiteSection">
+                <!-- big Slider section -->
+                <section id="bigSlider">
+                    <div class="container">
+                        <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
+                            <ol class="carousel-indicators">';
+            
+                            for ($i = 0; $i < count($bigSlider); $i++) {
+                                $active = "";
+                                if ($i == 0) {
+                                    $active = "active";
+                                }
+                                print '<li data-bs-target="#myCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
+                            }
+            
+                            print '
+                            </ol>
+                    
+                            <div class="carousel-inner">';
+                            
+                            $active2 = " active";
+                            foreach ($bigSlider as $slide) {
+                                print '
+            
+                                <div class="carousel-item' . $active2 . '">
+                                    <div class="myBackgroundImages" style="background-image: url(' . $slide[3] . ')"></div>  
+                                    <div class="container">
+                                        <div class="carousel-caption text-start">
+                                            <h1>' . $slide[0] . '</h1>
+                                            <p>' . $slide[1] . '</p>
+                                            <p><a class="btn btn-lg btn-primary" href="' . $slide[4] . '" role="button">' . $slide[2] . '</a></p>
+                                        </div>
+                                    </div>
+                                </div>';
+                                $active2 = "";
+                            }
+                    
+                            print '
+                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- galery section -->
+                <section id="galery">
                     <div class="container">
                         <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
                             <ol class="carousel-indicators">';
 
-                            for ($i = 0; $i < count($aboutSlider); $i++) {
+                            for ($i = 0; $i < count($galerySlider); $i++) {
                                 $active = "";
                                 if ($i == 0) {
                                     $active = "active";
@@ -133,7 +184,7 @@ print '<!doctype html>
                             <div class="carousel-inner">';
                             
                             $active2 = " active";
-                            foreach ($aboutSlider as $slide) {
+                            foreach ($galerySlider as $slide) {
                                 print '
 
                                 <div class="carousel-item' . $active2 . '">
@@ -142,7 +193,7 @@ print '<!doctype html>
                                         <div class="carousel-caption text-start">
                                             <h1>' . $slide[0] . '</h1>
                                             <p>' . $slide[1] . '</p>
-                                            <p><a class="btn btn-lg btn-primary" href="#" role="button">' . $slide[2] . '</a></p>
+                                            <p><a class="btn btn-lg btn-primary" href="' . $slide[4] . '" role="button">' . $slide[2] . '</a></p>
                                         </div>
                                     </div>
                                 </div>';
@@ -249,9 +300,9 @@ print '<!doctype html>
     </body>
 </html>';
 
-function readSliderElements(): array
+function readSliderElements(string $fileName): array
 {
-    $fileContent = file_get_contents('mySliders.csv');
+    $fileContent = file_get_contents($fileName);
     $fileRows = explode(PHP_EOL, $fileContent);
     $sliders = [];
 
