@@ -1,7 +1,7 @@
 <?php
 
-$bigSlider = readSliderElements('bigSlider.csv'); // get the array for the slider in the bigSlider-section
-$galerySlider = readSliderElements('mySliders.csv'); // get the array for the slider in the galery-section
+$bigSlider = readSliderElements('csv/bigSlider.csv'); // get the array for the slider in the bigSlider-section
+$galerySlider = readSliderElements('csv/mySliders.csv'); // get the array for the slider in the galery-section
 
 $pizza = [
     [
