@@ -1,7 +1,16 @@
 <?php
 
-$bigSlider = readSliderElements('csv/bigSlider.csv'); // get the array for the slider in the bigSlider-section
-$galerySlider = readSliderElements('csv/mySliders.csv'); // get the array for the slider in the galery-section
+include_once 'repository.php';
+
+$sliderRepository = new SliderRepository;
+
+// get the array for the slider in the bigSlider-section
+$sliderRepository->setCsvFile('csv/bigSlider.csv');
+$bigSlider = $sliderRepository->readCsvFile();
+
+// get the array for the slider in the galery-section
+$sliderRepository->setCsvFile('csv/mySlider.csv');
+$galerySlider = $sliderRepository->readCsvFile();
 
 $pizza = [
     [
@@ -42,13 +51,13 @@ print '<!doctype html>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css?family=El+Messiri:500|Lobster" rel="stylesheet">
-        <!--Minh Thais links-->
+        <!-- Minh Thais links -->
         <link rel="stylesheet" href="css/style1.css">
         <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
     </head>
     <body>
         <div id="page-wrapper">
-            <!--Minh Thais navigation-->
+            <!-- navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 fixed-top" aria-label="Ninth navbar example">
                 <div class="container-xl">
                     <a class="navbar-brand" href="index.html"><img src="images/logos/logo.png" alt="Pizzeria Logo"/> Pizza Fantastico</a>
@@ -57,36 +66,36 @@ print '<!doctype html>
                     </button>
                 
                     <div class="collapse navbar-collapse" id="navbarsExample07XL">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item active">
-                                    <a class="nav-link" aria-current="page" href="about_us.html">Über uns</a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" aria-current="page" href="ueber_uns.html">Über uns (alt)</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Speisekarte</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                                        <li><a class="dropdown-item" href="speisekarte.html">Angebot</a></li>
-                                        <li><a class="dropdown-item" href="speisekarte.html">Klassiker</a></li>
-                                        <li><a class="dropdown-item" href="speisekarte.html">Pizza-Vielfalt</a></li>
-                                        <li><a class="dropdown-item" href="speisekarte.html">Allergien</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Bestellen</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                                        <li><a class="dropdown-item" href="bestellen.html#PizzaBestellen">Aus der Speisekarte</a></li>
-                                        <li><a class="dropdown-item" href="bestellen.html#eigene_Pizza_zusammenstellen">Eigene Kreation</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#kontakt" tabindex="-1">Kontakt</a>
-                                </li>
-                            </ul>
-                            <form>
-                                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                            </form>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" aria-current="page" href="about_us.html">Über uns</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" aria-current="page" href="ueber_uns.html">Über uns (alt)</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Speisekarte</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+                                    <li><a class="dropdown-item" href="speisekarte.html">Angebot</a></li>
+                                    <li><a class="dropdown-item" href="speisekarte.html">Klassiker</a></li>
+                                    <li><a class="dropdown-item" href="speisekarte.html">Pizza-Vielfalt</a></li>
+                                    <li><a class="dropdown-item" href="speisekarte.html">Allergien</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Bestellen</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+                                    <li><a class="dropdown-item" href="bestellen.html#PizzaBestellen">Aus der Speisekarte</a></li>
+                                    <li><a class="dropdown-item" href="bestellen.html#eigene_Pizza_zusammenstellen">Eigene Kreation</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#kontakt" tabindex="-1">Kontakt</a>
+                            </li>
+                        </ul>
+                        <form>
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -117,7 +126,7 @@ print '<!doctype html>
                 <!-- big Slider section -->
                 <section id="bigSlider">
                     <div class="container">
-                        <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
+                        <div id="bigSliderCarousel" class="carousel slide " data-bs-ride="carousel">
                             <ol class="carousel-indicators">';
             
                             for ($i = 0; $i < count($bigSlider); $i++) {
@@ -125,7 +134,7 @@ print '<!doctype html>
                                 if ($i == 0) {
                                     $active = "active";
                                 }
-                                print '<li data-bs-target="#myCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
+                                print '<li data-bs-target="#bigSliderCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
                             }
             
                             print '
@@ -151,11 +160,11 @@ print '<!doctype html>
                             }
                     
                             print '
-                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                                <a class="carousel-control-prev" href="#bigSliderCarousel" role="button" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                                <a class="carousel-control-next" href="#bigSliderCarousel" role="button" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </a>
@@ -167,7 +176,7 @@ print '<!doctype html>
                 <!-- galery section -->
                 <section id="galery">
                     <div class="container">
-                        <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
+                        <div id="galeryCarousel" class="carousel slide " data-bs-ride="carousel">
                             <ol class="carousel-indicators">';
 
                             for ($i = 0; $i < count($galerySlider); $i++) {
@@ -175,7 +184,7 @@ print '<!doctype html>
                                 if ($i == 0) {
                                     $active = "active";
                                 }
-                                print '<li data-bs-target="#myCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
+                                print '<li data-bs-target="#galeryCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
                             }
 
                             print '
@@ -201,11 +210,11 @@ print '<!doctype html>
                             }
                     
                             print '
-                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                                <a class="carousel-control-prev" href="#galeryCarousel" role="button" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                                <a class="carousel-control-next" href="#galeryCarousel" role="button" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </a>
@@ -299,32 +308,6 @@ print '<!doctype html>
         <script src="javaScript/main.js"></script>
     </body>
 </html>';
-
-function readSliderElements(string $fileName): array
-{
-    $fileContent = file_get_contents($fileName);
-    $fileRows = explode(PHP_EOL, $fileContent);
-    $sliders = [];
-
-    foreach ($fileRows as $fileRow) {
-        if (empty($fileRow)) {
-            continue;
-        }
-        $sliders[] = str_getcsv ( $fileRow, "\t");
-    }
-    return $sliders;
-}
-
-/*
-Die gesamte Datei mySliders.txt wird in einen String gelesen, welcher in $fileContent gespeichert wird.
-Mit explode wird der große String in $fileContent nach Zeilen getrennt, die jeweils als ein Array-Element in $fileRows gespeichert werden.
-Ein Array namens $sliders wird definiert.
-Mit der foreach-Schleife betrachtet man das Array $fileRows. Da bei jedem Durchgang ein Array-Element behandelt wird, wird bei jedem Durchgang eine Zeile behandelt.
-Mit dem if sorgt man dafür, dass Leerzeilen nicht behandelt werden.
-$sliders[] fügt dem Array $sliders an letzter Stelle ein neues Element hinzu (siehe meinen Papierzettel).
-str_getcsv() teilt die values der Zeile in Array-Elemente eines Arrays. Dieses Array wird als neues Elements des Arrays $slider hinzugefügt. Daher handelt es sich bei $slider um ein 2dimensionales Array.
-Durch das return wird beim Funktionsaufruf das fertige Array ausgegeben :)
-*/
 
 function buildDishes(array $dishes): string 
 {
