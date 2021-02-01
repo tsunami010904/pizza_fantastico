@@ -4,13 +4,13 @@ include_once 'repository.php';
 
 $sliderRepository = new SliderRepository;
 
-// get the array for the slider in the bigSlider-section
+// get the array for the slider in the big slider section
 $sliderRepository->setCsvFile('csv/bigSlider.csv');
 $bigSlider = $sliderRepository->readCsvFile();
 
-// get the array for the slider in the galery-section
+// get the array for the slider in the about us section
 $sliderRepository->setCsvFile('csv/mySlider.csv');
-$galerySlider = $sliderRepository->readCsvFile();
+$aboutUsSlider = $sliderRepository->readCsvFile();
 
 $pizza = [
     [
@@ -60,7 +60,7 @@ print '<!doctype html>
             <!-- navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 fixed-top" aria-label="Ninth navbar example">
                 <div class="container-xl">
-                    <a class="navbar-brand" href="index.html"><img src="images/logos/logo.png" alt="Pizzeria Logo"/> Pizza Fantastico</a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logos/logo.png" alt="Pizzeria Logo"/> Pizza Fantastico</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -68,10 +68,7 @@ print '<!doctype html>
                     <div class="collapse navbar-collapse" id="navbarsExample07XL">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item active">
-                                <a class="nav-link" aria-current="page" href="about_us.html">Über uns</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" aria-current="page" href="ueber_uns.html">Über uns (alt)</a>
+                                <a class="nav-link" aria-current="page" href="#aboutUs">Über uns</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Speisekarte</a>
@@ -90,12 +87,9 @@ print '<!doctype html>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#kontakt" tabindex="-1">Kontakt</a>
+                                <a class="nav-link" href="#contact" tabindex="-1">Kontakt</a>
                             </li>
                         </ul>
-                        <form>
-                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                        </form>
                     </div>
                 </div>
             </nav>
@@ -110,16 +104,16 @@ print '<!doctype html>
                     <br/>
                     <br/>
                     <p class="animated bounceInRight object-restaurant-description-1">Das <br />
-                        original italianische <br />
+                        original italienische <br />
                         Restaurant <br />
                     </p>
-                    <p class="animated fadeInUp object-restaurant-description-2">am Frankfurt Hauptbahnhof</p>
+                    <p class="animated fadeInUp object-restaurant-description-2">Am Frankfurter Hauptbahnhof</p>
                     <br/>
                     <br/>
                     <br/>
                     <p class="animated fadeInLeft object-restaurant-description-2">Herzlich Willkommen</p>
                 </div>
-                <a href="#bigSlider" class="more scrolly">Unsere Öffnungszeiten</a>
+                <a href="#openingHours" class="more scrolly animated fadeInDown whiteLink">Unsere Öffnungszeiten</a>
             </section>
 
             <div class="whiteSection">
@@ -173,76 +167,120 @@ print '<!doctype html>
                     </div>
                 </section>
 
-                <!-- galery section -->
-                <section id="galery">
-                    <div class="container">
-                        <div id="galeryCarousel" class="carousel slide " data-bs-ride="carousel">
-                            <ol class="carousel-indicators">';
-
-                            for ($i = 0; $i < count($galerySlider); $i++) {
-                                $active = "";
-                                if ($i == 0) {
-                                    $active = "active";
-                                }
-                                print '<li data-bs-target="#galeryCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
-                            }
-
-                            print '
-                            </ol>
+                <br>
+        
+                <div class="container marketing">
+        
+                    <!-- Three columns of text below the carousel -->
+                    <div class="row">
+                      <div class="col-lg-4 text-center">
+                            <img src="images/meals/start.jpg" alt="oven" class="iconPictures">
                     
-                            <div class="carousel-inner">';
+                            <h2>Seit 1872</h2>
+                            <p>Über Generationen sind traditionelle Rezepte entstanden. Unsere Pizzen werden noch heute in Steinöfen gebacken.</p>
+                            <p><a class="btn btn-secondary" href="#" role="button">Über uns »</a></p>
+                      </div><!-- /.col-lg-4 -->
+                      <div class="col-lg-4 text-center">
+                           <img src="images/meals/start.jpg" alt="virus" class="iconPictures">
+                    
+                            <h2>Covid-19</h2>
+                            <p>Wegen der Corona-Pandemie ist es leider nicht möglich, vor Ort zu essen. Ihre Bestellung wird in unseren Restaurants zur Abholung oder zur Lieferung zubereitet.</p>
+                            <p><a class="btn btn-secondary" href="#openingHours" role="button">Unsere Öffnungszeiten »</a></p>
+                      </div><!-- /.col-lg-4 -->
+                      <div class="col-lg-4 text-center">
+                            <img src="images/meals/start.jpg" alt="cook" class="iconPictures">
+                    
+                            <h2>Auf Jobsuche?</h2>
+                            <p>Beginnen Sie Ihre Karriere bei Pizza Fantastico! Abwechslungsreiche Tätigkeiten, flexible Arbeitszeiten und freundliche Kollegen warten auf Sie! </p>
+                            <p><a class="btn btn-secondary" href="#" role="button">Ihre Möglichkeiten »</a></p>
+                      </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+
+                    <hr>
+                
+                </div>
+
+                <!-- about us section -->
+                <section id="aboutUs">
+                    <div class="container">                    
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static pizzaBackground">
+                                <strong class="d-inline-block mb-2 text-primary">Über uns</strong>
+                                <h3 class="mb-0">Über uns</h3>
+                                <div class="mb-1 text-muted">Nov 12</div>
+                                <h5 class="card-text mb-auto">Wir betreiben seit 1971 ein traditionelles itatienisches Restaurant im Herzen Frankfurts. Hier sind einige Eindrücke.</h5>
+                            </div>
+                            <div class="col-md-8 mx-auto d-lg-block">
+                                <div id="aboutUsCarousel" class="carousel slide " data-bs-ride="carousel">
+                                    <ol class="carousel-indicators">';
+
+                                    for ($i = 0; $i < count($aboutUsSlider); $i++) {
+                                        $active = "";
+                                        if ($i == 0) {
+                                            $active = "active";
+                                        }
+                                        print '<li data-bs-target="#aboutUsCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
+                                    }
+
+                                    print '
+                                    </ol>
                             
-                            $active2 = " active";
-                            foreach ($galerySlider as $slide) {
-                                print '
+                                    <div class="carousel-inner">';
+                                    
+                                    $active2 = " active";
+                                    foreach ($aboutUsSlider as $slide) {
+                                        print '
 
-                                <div class="carousel-item' . $active2 . '">
-                                    <div class="myBackgroundImages" style="background-image: url(' . $slide[3] . ')"></div>  
-                                    <div class="container">
-                                        <div class="carousel-caption text-start">
-                                            <h1>' . $slide[0] . '</h1>
-                                            <p>' . $slide[1] . '</p>
-                                            <p><a class="btn btn-lg btn-primary" href="' . $slide[4] . '" role="button">' . $slide[2] . '</a></p>
-                                        </div>
+                                        <div class="carousel-item smallItem' . $active2 . '">
+                                            <div class="myBackgroundImages" style="background-image: url(' . $slide[3] . ')"></div>  
+                                            <div class="container">
+                                                <div class="carousel-caption text-start">
+                                                    <h1>' . $slide[0] . '</h1>
+                                                    <p>' . $slide[1] . '</p>
+                                                    <p><a class="btn btn-lg btn-primary" href="' . $slide[4] . '" role="button">' . $slide[2] . '</a></p>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                        $active2 = "";
+                                    }
+                            
+                                    print '
+                                        <a class="carousel-control-prev" href="#aboutUsCarousel" role="button" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#aboutUsCarousel" role="button" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </a>
                                     </div>
-                                </div>';
-                                $active2 = "";
-                            }
-                    
-                            print '
-                                <a class="carousel-control-prev" href="#galeryCarousel" role="button" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#galeryCarousel" role="button" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                
 
                 <!--Dishes-->
                 <div id="preisliste">
-                <h2>Speisekarte</h2>
+                    <h2>Speisekarte</h2>
 
-                <table>
-                    <tr>
-                        <th></th>
-                        <th>Durchmesser</th>
-                        <th>Preis ($)</th>
-                    </tr>
-                    '.buildDishes($pizza).'
-                </table>
-            </div>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Durchmesser</th>
+                            <th>Preis ($)</th>
+                        </tr>
+                        '.buildDishes($pizza).'
+                    </table>
+                </div>
             </div>
 
             <!--Please insert your career-code here-->
 
             <!--footer start-->
-            <footer class="page-footer bg-dark" id="runter">
-                <div class="bg-success size30">
+            <footer class="page-footer bg-dark" id="footer">
+                <div class="bg-success h2">
                     <div class="container">
                         <div class="row py-4 d-flex align-items-center">
                             <div class="col-md-12 text-center">
@@ -258,14 +296,52 @@ print '<!doctype html>
     
                 <div class="container text-center text-md-center text-white mt-5">
                     <div class="row">
-                        <div class="col-md-4 mx-auto mb-4">
+                        <div id="motto" class="col-md-4 mx-auto mb-4">
                             <h6 class="text-uppercase font-weight-bold">Unser Motto</h6>
-                            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto footerHorizon">
-                            <p class="mt-2 meineQuote"><i class="fas fa-quote-right"></i> In der Weihnachtsbäckerei, gibt es manche Leckerei, zwischen Mehl und Tomatensauce macht so mancher Knilch eine riesengroße Kleckerei, in der Weihnachtsbäckerei, in der Weihnachtsbäckerei ... <i class="fas fa-quote-left"></i></p>
+                            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+                            <p class="mt-2 ">
+                                <i class="fas fa-quote-right"></i>
+                                <i> In der Weihnachtsbäckerei, gibt es manche Leckerei, zwischen Mehl und Tomatensauce macht so mancher Knilch eine riesengroße Kleckerei, in der Weihnachtsbäckerei, in der Weihnachtsbäckerei ... </i>
+                                <i class="fas fa-quote-left"></i>
+                            </p>
                         </div>
-                        <div class="col-md-6 mx-auto mb-4">
+                        <div id="openingHours" class="col-md-4 mx-auto mb-4">
+                            <h6 class="text-uppercase font-weight-bold">Unsere Öffnungszeiten</h6>
+                            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+                            <table>
+                            <tr>
+                                <td>Montag</td>
+                                <td>8:00 - 20:00 Uhr</td>
+                            </tr>
+                            <tr>
+                                <td>Dienstag</td>
+                                <td>8:00 - 20:00 Uhr</td>
+                            </tr>
+                            <tr>
+                                <td>Mittwoch</td>
+                                <td>8:00 - 20:00 Uhr</td>
+                            </tr>
+                            <tr>
+                                <td>Donnerstag</td>
+                                <td>8:00 - 20:00 Uhr</td>
+                            </tr>
+                            <tr>
+                                <td>Freitag</td>
+                                <td>9:00 - 18:00 Uhr</td>
+                            </tr>
+                            <tr>
+                                <td>Samstag</td>
+                                <td>9:00 - 14:00 Uhr</td>
+                            </tr>
+                            <tr>
+                                <td>Sonntag</td>
+                                <td>---</td>
+                            </tr>
+                        </table>
+                        </div>
+                        <div id="contact" class="col-md-4 mx-auto mb-4">
                             <h6 class="text-uppercase font-weight-bold">Kontakt</h6>
-                            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto footerHorizon">
+                            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
                             <table>
                                 <tr>
                                     <td>Hauptsitz</td>
@@ -281,20 +357,14 @@ print '<!doctype html>
                                 </tr>
                                 <tr>
                                     <td>Website</td>
-                                    <td><a href="https://tsunami010904.github.io/pizza_fantastico.github.io/" target="_blank" class="whiteLink">Gehe zu GiHub</a></td>
+                                    <td><a href="https://github.com/tsunami010904/pizza_fantastico.github.io" target="_blank" class="whiteLink">Gehe zu GiHub</a></td>
                                 </tr>
                             </table>
                         </div>
-                        <div class="col-md-2 mx-auto mb-4">
-                            <h6 class="text-uppercase font-weight-bold">Das Team</h6>
-                            <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto footerHorizon">
-                            <ul class="list-unstyled">
-                                <li class="my-2">tsunami</li>
-                                <li class="my-2">jgeschaftlich</li>
-                                <li class="my-2">salnhan</li>
-                            </ul>
-                        </div>
                     </div>
+                </div>
+                <div id="copyright" class="footer-copyright text-center text-white py-3">
+                    <p>&copy; Tsunami, jgeschaftlich, salnhan</p>
                 </div>
             </footer>
 

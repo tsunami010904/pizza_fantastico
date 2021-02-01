@@ -11,8 +11,9 @@ h1 {
 
 table, th, td {
     border: none;
-    padding: 5px;
+    padding: 2px;
 }
+
 table {
     width: 100%;
     text-align: center;
@@ -20,6 +21,12 @@ table {
 
 .carousel-item {
     height: 32rem;
+    background: #000;
+    position: relative;
+}
+
+.smallItem {
+    height: 24rem;
     background: #000;
     position: relative;
 }
@@ -41,21 +48,9 @@ table {
     border-radius: 100%;
 }
 
-.mittelding {
-    text-align: center;
-}
-
-.footerHorizon {
+footer hr {
     width: 90%;
     height: 5px !important;
-}
-
-.size30 {
-    font-size: 30px;
-}
-
-.meineQuote {
-    font-style: italic;
 }
 
 a:link.whiteLink {
@@ -71,5 +66,12 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
 .whiteSection {
     background: white;
     padding: 40px;
-    margin: 100px auto;
+}
+
+.pizzaBackground {
+    background: #BF9039;
+}
+
+#copyright {
+    background-color: #1A1A1A;
 }

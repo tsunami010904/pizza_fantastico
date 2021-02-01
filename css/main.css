@@ -118,7 +118,6 @@ body {
 
 #main .inner {
     display: none;
-    margin-top: -15em;
 }
 
 #main p {
@@ -127,25 +126,7 @@ body {
     font-weight: 800;
 }
 
-#main p a {
-    color: inherit;
+#main a {
+    letter-spacing: 0.225em;
+    text-transform: capitalize;
 }
-
-.footer {
-    bottom: 0;
-    width: 100%;
-    background-color: #11181e;
-    border: 1px solid transparent;
-    font-family: 'El Messiri', sans-serif;
-}
-
-.footer--column {
-    color: #dddddd;
-    margin-top: 10px;
-}
-
-.footer--logo {
-    margin: 10px 0 10px 0;
-    width: 140px;
-}
-
