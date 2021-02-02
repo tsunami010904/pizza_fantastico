@@ -173,27 +173,27 @@ print '<!doctype html>
         
                     <!-- Three columns of text below the carousel -->
                     <div class="row">
-                      <div class="col-lg-4 text-center">
-                            <img src="images/sliders_icons/pict10.jpg" alt="lieferando" class="iconPictures">
-                    
-                            <h2>Kontaktlose Lieferung</h2>
-                            <p>Dank unseres Partners Lieferando wird Ihre Pizza zuverlässig zugestellt.</p>
-                            <p><a class="btn btn-secondary" href="https://www.lieferando.de" target="_blank" role="button">Besuche lieferando.de »</a></p>
-                      </div><!-- /.col-lg-4 -->
-                      <div class="col-lg-4 text-center">
-                           <img src="images/sliders_icons/pict8.jpg" alt="virus" class="iconPictures">
-                    
-                            <h2>Covid-19</h2>
-                            <p>Wegen der Corona-Pandemie ist es leider nicht möglich, vor Ort zu essen. Ihre Bestellung wird in unseren Restaurants zur Abholung oder zur Lieferung zubereitet.</p>
-                            <p><a class="btn btn-secondary" href="#openingHours" role="button">Unsere Öffnungszeiten »</a></p>
-                      </div><!-- /.col-lg-4 -->
-                      <div class="col-lg-4 text-center">
-                            <img src="images/sliders_icons/pict7.jpg" alt="cook" class="iconPictures">
-                    
-                            <h2>Auf Jobsuche?</h2>
-                            <p>Beginnen Sie Ihre Karriere bei Pizza Fantastico! Abwechslungsreiche Tätigkeiten, flexible Arbeitszeiten und freundliche Kollegen warten auf Sie! </p>
-                            <p><a class="btn btn-secondary" href="#" role="button">Ihre Möglichkeiten »</a></p>
-                      </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 text-center">
+                                <img src="images/sliders_icons/pict10.jpg" alt="lieferando" class="iconPictures">
+                        
+                                <h2>Kontaktlose Lieferung</h2>
+                                <p>Dank unseres Partners Lieferando wird Ihre Pizza zuverlässig zugestellt.</p>
+                                <p><a class="btn btn-secondary" href="https://www.lieferando.de" target="_blank" role="button">Besuche lieferando.de »</a></p>
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 text-center">
+                            <img src="images/sliders_icons/pict8.jpg" alt="virus" class="iconPictures">
+                        
+                                <h2>Covid-19</h2>
+                                <p>Wegen der Corona-Pandemie ist es leider nicht möglich, vor Ort zu essen. Ihre Bestellung wird in unseren Restaurants zur Abholung oder zur Lieferung zubereitet.</p>
+                                <p><a class="btn btn-secondary" href="#openingHours" role="button">Unsere Öffnungszeiten »</a></p>
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 text-center">
+                                <img src="images/sliders_icons/pict7.jpg" alt="cook" class="iconPictures">
+                        
+                                <h2>Auf Jobsuche?</h2>
+                                <p>Beginnen Sie Ihre Karriere bei Pizza Fantastico! Abwechslungsreiche Tätigkeiten, flexible Arbeitszeiten und freundliche Kollegen warten auf Sie! </p>
+                                <p><a class="btn btn-secondary" href="#" role="button">Ihre Möglichkeiten »</a></p>
+                        </div><!-- /.col-lg-4 -->
                     </div><!-- /.row -->
 
                     <hr>
