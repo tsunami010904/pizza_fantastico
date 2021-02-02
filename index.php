@@ -275,9 +275,131 @@ print '<!doctype html>
                     </table>
                 </div>
             </div>
+            
+            <div id="webcontent">
+            <div id="bestellen">
+                <h2>Bestellen</h2>
+                <p>Bitte beachten sie, dass aufgrund der Covid19 Krise Lieferzeiten evtl nicht eingehalten werden können.</p>
 
+                <ul>
+                    <li>Ab 10$ Besetllwert, kostenloser Versand</li>
+                    <li>Ab 5$  Besetllwert, 50% Versandkosten</li>
+                    <li>Unter 5$ Bestellwert, keine Erstattung</li>
+                </ul>
+                <hr>
+            </div>
+           
+                    </div>
+
+                </form>
+            </div>
+
+            
+
+            <?php
+            
+            ?>
+                    
+                    <br>
+            <div id="checkbox">
+            <h3>Was möchtest du auf deiner Pizza haben?</h3>
+    <form method="POST" >
+
+    
+                         
+
+    <div id="eigene_Pizza_zusammenstellen">
+                    <h3>Oder kreiere deine eigene Pizza!</h3>
+                    <div id="teig_waehlen">
+                        <p>Hier kannst du dein Pizzateig auswählen!</p>
+                        <label for="Teig">Teig</label>
+                        <input list="Teigarten" id="Teig" name="Zutat[]" placeholder="auswählen">
+                    
+                        <datalist id="Teigarten">
+                            <option value="Normal"></option>
+                            <option value="Kartoffel"></option>
+                            <option value="Knoblauch"></option>
+                            <option value="Kürbis"></option>
+                            <option value="Süß"></option>
+                            <option value="Vegan"></option>
+                            <option value="Glutenfrei"></option>
+                            <option value="Lactosefrei"></option>
+                        </datalist>
+                    </div>
+    <p><input type="checkbox" name="Zutat[]" value="Salami"/>Salami </p>
+    <p><input type="checkbox" name="Zutat[]" value="Käse">Käse</p>
+    <p><input type="checkbox" name="Zutat[]" value="Peperoni">Peperoni</p>
+    <p><input type="checkbox" name="Zutat[]" value="Champignon">Champignon</p>
+    <p><input type="checkbox" name="Zutat[]" value="Paprika">Paprika</p>
+    <p><input type="checkbox" name="Zutat[]" value="Thunfisch">Thunfisch</p>
+    <p><input type="checkbox" name="Zutat[]" value="Ananas">Ananas</p>
+
+
+
+
+    
+
+    </div>
+    <div class="durchmesser_wählen">
+
+<p>Wie groß soll die Pizza sein?</p>
+
+<label for="gr1">26cm:</label>
+<input type="radio" name="Zutat[]" id="gr1" value="26cm"><br>
+<label for="gr2">32cm:</label>
+<input type="radio" name="Zutat[]" id="gr2" value="32cm"><br>
+<label for="gr3">38cm:</label>
+<input type="radio" name="Zutat[]" id="gr3" value="38cm"><br>
+</div>
+<p><input type="submit" name="submit" value="Submit"></p>
+</form>
+<br>                
             <!--Please insert your career-code here-->
-
+            <div class="banner">
+            <div class="topleft">
+             <h1>Karriere</h1>
+             <h4>Starten sie bei uns ihre Berufsbahn und erleben sie Freude, Spass und Fairness!</h2>
+            <table>
+            </div>
+            <div id="karrieretext">
+            <tr>
+            <th>Unsere Normen und Werte</th>
+            <th>Unser Wertvollstes Gut:</th>
+            </tr>
+            <tr>
+            <td><p>Unsere Traditionsbäckerei hatte schon immer einen hohen Standard;<br>
+             nicht nur für die Gäste, sondern auch, was die Arbeitsqualität der Mitarbeiter.<br>
+              Wir vermeiden Stress, fördern Kreativität und unterstützen unsere Mitarbeiter!<br>
+            Aufgrund dieser Tugenden lieben unsere Mitarbeiter ihren Job.<br>
+            Zögern sie nicht und werden sie Teil von unserem großartigem Team!</p></td>
+            
+            </div>
+            
+            
+            <div id="karriere2">
+            
+            <td>dsapicasocnasocnoascusanocbofouabfjsa cjsacsaudhosuhfsalncas ijsadpianssdis<br>
+            rieabckanuaeobfu iwodb b woidhnabsjd usj  wu bksjd aubw u kjsbda bdwuib <br>
+            iebdj  weijpnlkdf eip nl  iefnlskde  eifnlksd  wfeijlkns ejkfln fwejbks ewk jbfs<<br>
+            doua  aidlnks eip hsndlk  iejslf ewi flskn iewfsl nkd  eoj sflkndwe jilskniejflsnflsfns<br></td>
+            </tr>
+            </div>
+            </table>
+    
+         <div class="quote">
+             <h3>"So eine tolle und  <br>
+                aufregende Arbeit <br>
+                möchte ich niemals <br>
+                aufgeben!" </h3>
+                <h4>~Luigi Musomicci, unser Bäcker</h4>
+    
+    
+         </div>
+            
+       
+    
+    
+    
             <!--footer start-->
             <footer class="page-footer bg-dark" id="footer">
                 <div class="bg-success h2">
@@ -399,4 +521,27 @@ foreach($dishes as $tr) {    //Kommentar
     $result .= vsprintf($template, [ $tr["Art"],$tr["Preis1"],$tr["Preis2"],$tr["Preis3"]]);
 } 
 return $result;
-} 
+}
+
+$zutaten = "";                  
+if (isset($_POST["submit"]))
+{
+    if(!empty($_POST["Zutat"]))
+    {    
+         
+        
+        foreach($_POST["Zutat"] as $zutat)
+        {
+            echo $zutat ." ,";
+            $zutaten .=  $zutat ."\t";
+        }
+    }
+    else 
+    {
+        echo"<h3>Bitte wähle mindestens eine Zutat aus</h3>";
+    }
+}
+$filename = "data.txt";
+file_put_contents($filename, $zutaten);
+
+

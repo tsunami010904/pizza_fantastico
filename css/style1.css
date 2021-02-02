@@ -75,3 +75,44 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
 #copyright {
     background-color: #1A1A1A;
 }
+
+#checkbox{
+    text-align: center;
+}
+
+#bestellen{
+    text-align: center;
+    background-color: white;
+}
+
+#preisliste{
+    text-align: center;
+}
+
+.topleft 
+{
+   text-align: center;
+   vertical-align: top;
+   align-self: auto;
+   color: white;
+}
+.banner
+{
+   position: relative; 
+   background-image: url(https://cdn.pixabay.com/photo/2015/09/16/20/10/dough-943245__480.jpg);
+   min-height: 1200wh;
+   background-size: cover;
+   background-position: center;
+   padding: 300px 0 200px;
+   color: white;
+   font-size: large;
+   height: 50rem;
+}
+.quote{
+    text-align: center;
+}
+
+#karrieretext{
+  font-size: small;
+  text-align: left;
+}
