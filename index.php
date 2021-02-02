@@ -58,7 +58,7 @@ print '<!doctype html>
     <body>
         <div id="page-wrapper">
             <!-- navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 fixed-top" aria-label="Ninth navbar example">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 fixed-top opacityLess">
                 <div class="container-xl">
                     <a class="navbar-brand" href="index.php"><img src="images/logos/logo.png" alt="Pizzeria Logo"/> Pizza Fantastico</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,7 +120,7 @@ print '<!doctype html>
                 <!-- big Slider section -->
                 <section id="bigSlider">
                     <div class="container">
-                        <div id="bigSliderCarousel" class="carousel slide " data-bs-ride="carousel">
+                        <div id="bigSliderCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                             <ol class="carousel-indicators">';
             
                             for ($i = 0; $i < count($bigSlider); $i++) {
@@ -143,7 +143,7 @@ print '<!doctype html>
                                 <div class="carousel-item' . $active2 . '">
                                     <div class="myBackgroundImages" style="background-image: url(' . $slide[3] . ')"></div>  
                                     <div class="container">
-                                        <div class="carousel-caption text-start">
+                                        <div class="carousel-caption' . $slide[5]. '">
                                             <h1>' . $slide[0] . '</h1>
                                             <p>' . $slide[1] . '</p>
                                             <p><a class="btn btn-lg btn-primary" href="' . $slide[4] . '" role="button">' . $slide[2] . '</a></p>
@@ -174,21 +174,21 @@ print '<!doctype html>
                     <!-- Three columns of text below the carousel -->
                     <div class="row">
                       <div class="col-lg-4 text-center">
-                            <img src="images/meals/start.jpg" alt="oven" class="iconPictures">
+                            <img src="images/sliders_icons/pict10.jpg" alt="lieferando" class="iconPictures">
                     
-                            <h2>Seit 1872</h2>
-                            <p>Über Generationen sind traditionelle Rezepte entstanden. Unsere Pizzen werden noch heute in Steinöfen gebacken.</p>
-                            <p><a class="btn btn-secondary" href="#" role="button">Über uns »</a></p>
+                            <h2>Kontaktlose Lieferung</h2>
+                            <p>Dank unseres Partners Lieferando wird Ihre Pizza zuverlässig zugestellt.</p>
+                            <p><a class="btn btn-secondary" href="https://www.lieferando.de" target="_blank" role="button">Besuche lieferando.de »</a></p>
                       </div><!-- /.col-lg-4 -->
                       <div class="col-lg-4 text-center">
-                           <img src="images/meals/start.jpg" alt="virus" class="iconPictures">
+                           <img src="images/sliders_icons/pict8.jpg" alt="virus" class="iconPictures">
                     
                             <h2>Covid-19</h2>
                             <p>Wegen der Corona-Pandemie ist es leider nicht möglich, vor Ort zu essen. Ihre Bestellung wird in unseren Restaurants zur Abholung oder zur Lieferung zubereitet.</p>
                             <p><a class="btn btn-secondary" href="#openingHours" role="button">Unsere Öffnungszeiten »</a></p>
                       </div><!-- /.col-lg-4 -->
                       <div class="col-lg-4 text-center">
-                            <img src="images/meals/start.jpg" alt="cook" class="iconPictures">
+                            <img src="images/sliders_icons/pict7.jpg" alt="cook" class="iconPictures">
                     
                             <h2>Auf Jobsuche?</h2>
                             <p>Beginnen Sie Ihre Karriere bei Pizza Fantastico! Abwechslungsreiche Tätigkeiten, flexible Arbeitszeiten und freundliche Kollegen warten auf Sie! </p>
@@ -205,9 +205,9 @@ print '<!doctype html>
                     <div class="container">                    
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static pizzaBackground">
-                                <strong class="d-inline-block mb-2 text-primary">Über uns</strong>
+                                <strong class="d-inline-block mb-2 text-primary">#1971</strong>
                                 <h3 class="mb-0">Über uns</h3>
-                                <div class="mb-1 text-muted">Nov 12</div>
+                                <div class="mb-1 text-muted">2. Feb</div>
                                 <h5 class="card-text mb-auto">Wir betreiben seit 1971 ein traditionelles itatienisches Restaurant im Herzen Frankfurts. Hier sind einige Eindrücke.</h5>
                             </div>
                             <div class="col-md-8 mx-auto d-lg-block">
@@ -232,12 +232,10 @@ print '<!doctype html>
                                         print '
 
                                         <div class="carousel-item smallItem' . $active2 . '">
-                                            <div class="myBackgroundImages" style="background-image: url(' . $slide[3] . ')"></div>  
+                                            <div class="mySmallBackgroundImages" style="background-image: url(' . $slide[1] . ')"></div>  
                                             <div class="container">
-                                                <div class="carousel-caption text-start">
-                                                    <h1>' . $slide[0] . '</h1>
-                                                    <p>' . $slide[1] . '</p>
-                                                    <p><a class="btn btn-lg btn-primary" href="' . $slide[4] . '" role="button">' . $slide[2] . '</a></p>
+                                                <div class="carousel-caption mb-5">
+                                                    <h3>' . $slide[0] . '</h3>
                                                 </div>
                                             </div>
                                         </div>';
@@ -406,10 +404,10 @@ print '<!doctype html>
                     <div class="container">
                         <div class="row py-4 d-flex align-items-center">
                             <div class="col-md-12 text-center">
-                                <a href="#"><i class="fab fa-facebook-square text-white mr-4"></i></a>
-                                <a href="#"><i class="fab fa-twitter text-white mr-4"></i></a>
-                                <a href="https://tsunami010904.github.io/pizza_fantastico.github.io/" target="_blank"><i class="fab fa-github text-white mr-4"></i></a>
-                                <a href="#"><i class="fab fa-youtube text-white mr-4"></i></a>
+                                <a href="https://de-de.facebook.com/" target="_blank"><i class="fab fa-facebook-square text-white mr-4"></i></a>
+                                <a href="https://twitter.com/?lang=de" target="_blank"><i class="fab fa-twitter text-white mr-4"></i></a>
+                                <a href="https://github.com/tsunami010904/pizza_fantastico.github.io" target="_blank"><i class="fab fa-github text-white mr-4"></i></a>
+                                <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube text-white mr-4"></i></a>
                                 <a href="#"><i class="fab fa-paypal text-white mr-4"></i></a>
                             </div>
                         </div>
@@ -464,7 +462,7 @@ print '<!doctype html>
                         <div id="contact" class="col-md-4 mx-auto mb-4">
                             <h6 class="text-uppercase font-weight-bold">Kontakt</h6>
                             <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
-                            <table>
+                            <table class="text-start">
                                 <tr>
                                     <td>Hauptsitz</td>
                                     <td><a href="https://www.google.de/maps/place/Frankfurt+(Main)+Hauptbahnhof/@50.106529,8.6504486,14z/data=!4m8!1m2!2m1!1shbf!3m4!1s0x47bd0bfe3791b2f9:0x4366c932973aafac!8m2!3d50.106529!4d8.6621618" target="_blank" class="whiteLink">irgendwasstrasse Ffm 60606 <i class="fas fa-map-marker-alt text-white mr-4"></i></a></td>
