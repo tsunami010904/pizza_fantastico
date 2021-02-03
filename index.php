@@ -12,30 +12,43 @@ $bigSlider = $sliderRepository->readCsvFile();
 $sliderRepository->setCsvFile('csv/mySlider.csv');
 $aboutUsSlider = $sliderRepository->readCsvFile();
 
-$pizza = [
+// get the array for the slider in the about us section
+$sliderRepository->setCsvFile('csv/menu.csv');
+$pizza = $sliderRepository->readCsvFile();
+
+// The array $pizzaOld is not necessary if getting the csv-file works
+$pizzaOld = [
     [
-        "Art" => "Magerita",
-        "Preis1" => "5",
-        "Preis2" => "5,5",
-        "Preis3" => "7",
+        "name" => "Margherita",
+        "picture" => "images/meals/pizza5.jpg",
+        "ingredients" => "Tomatensauce, Käse, Basilikum",
+        "price1" => "5, 00",
+        "price2" => "5, 50",
+        "price3" => "7, 00",
     ], 
     [
-        "Art" => "Salami", 
-        "Preis1" => "6",
-        "Preis2" => "6,5",
-         "Preis3" => "8",
+        "name" => "Salami", 
+        "picture" => "images/meals/pizza2.jpg",
+        "ingredients" => "Tomatensauce, Käse, Salami",
+        "price1" => "6, 00",
+        "price2" => "6, 50",
+        "price3" => "8, 00",
     ],
     [
-        "Art" => "Tuna",
-        "Preis1" => "7",
-        "Preis2" => "7,5",
-        "Preis3" => "9",
+        "name" => "Tuna",
+        "picture" => "images/meals/pizza6.jpg",
+        "ingredients" => "Tomatensauce, Käse, Thunfisch, Zwiebeln",
+        "price1" => "7, 00",
+        "price2" => "7, 50",
+        "price3" => "9, 00",
     ],
     [
-        "Art" => "Vegan",
-        "Preis1" => "6",
-        "Preis2" => "6,5",
-        "Preis3" => "7,5",
+        "name" => "Vegan",
+        "picture" => "images/meals/pizza7.jpg",
+        "ingredients" => "Tomatensauce, frische Tomaten, Basilikum",
+        "price1" => "6, 00",
+        "price2" => "6, 50",
+        "price3" => "7, 50",
     ],
 ];
 
@@ -258,17 +271,17 @@ print '<!doctype html>
                     </div>
                 </section>
                 
-
+                <br>
                 <!--Dishes-->
                 <div id="preisliste">
-                    <h2>Speisekarte</h2>
-
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Durchmesser</th>
-                            <th>Preis ($)</th>
-                        </tr>
+                    <table class="newDishes">
+                        <thead class="mealHead">
+                            <tr>
+                                <th colspan="2"><i>Speisekarte</i></th>
+                                <th style="font-size: 40px;">⌀</th>
+                                <th>Preis(€)</th>
+                            </tr>
+                        </thead>
                         '.buildDishes($pizza).'
                     </table>
                 </div>
@@ -501,22 +514,24 @@ print '<!doctype html>
 
 function buildDishes(array $dishes): string 
 {
-    $template = '<tr>
-    <td rowspan="3">%1$s</td>
-    <td>26cm</td>
-    <td>%2$s</td>
+    $template = '<tr class="meal">
+    <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url(%2$s)"></div></div></td>
+    <td class="name">%1$s</td>
+    <td class="size size1">26cm</td>
+    <td class="price">%4$s</td>
 </tr>
 <tr>
-    <td>32cm</td>
-    <td>%3$s</td>
+    <td rowspan="2" class="ingredients">%3$s</td>
+    <td class="size size2">32cm</td>
+    <td class="price">%5$s</td>
 </tr>
 <tr>
-    <td>38cm</td>
-    <td>%4$s</td>
+    <td class="size size3">38cm</td>
+    <td class="price">%6$s</td>
 </tr>';
 $result = '';
 foreach($dishes as $tr) {    //Kommentar
-    $result .= vsprintf($template, [ $tr["Art"],$tr["Preis1"],$tr["Preis2"],$tr["Preis3"]]);
+    $result .= vsprintf($template, [ $tr[0], $tr[1], $tr[2], $tr[3],$tr[4],$tr[5]]);
 } 
 return $result;
 }

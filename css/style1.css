@@ -133,3 +133,74 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
 .carousel-caption p {
     font-size: 22px;
 }
+
+.newDishes, .newDishes td, .newDishes th {
+    border: 1px solid #000;
+}
+
+.newDishes tr.meal {
+    border-top: 2px solid #000;
+}
+
+.mealItem {
+    min-height: 130px;
+    min-width: 80px;
+    max-width: 250px;
+    background: #000;
+    position: relative;
+    border-radius: 10px;
+}
+
+.mealImages {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+td.name {
+    font-style: italic !important;
+    font-size: 30px !important;
+    background: rgb(255, 233, 159);
+
+}
+
+td.ingredients {
+    font-size: 18px;
+    color: #000;
+    background: rgb(187, 177, 146);
+
+}
+
+td.size, td.price {
+    font-size: 26px;
+}
+
+.size.size1 {
+    color: rgba(167, 17, 17, 0.692);
+    background: rgb(248, 223, 140);
+}
+
+.size.size2 {
+    color: rgb(14, 14, 148);
+    background: rgba(248, 223, 140, 0.767);
+}
+
+.size.size3 {
+    color: rgb(116, 14, 141);
+    background: rgba(245, 229, 177, 0.767);
+}
+
+.price {
+    background: rgba(248, 223, 140, 0.3);
+}
+
+.mealHead {
+    font-size: 26px;
+    background: rgb(182, 164, 105);
+}
