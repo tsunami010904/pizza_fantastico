@@ -1,8 +1,30 @@
 <?php
-
+include_once "src/Controller/OrderController.php";
 include_once 'repository.php';
-
+$controllerName = 'Default';
+$actionName = 'index';
+$defaultAction = 'indexAction';
+if (isset($_POST['controller'])&&!empty($_POST['controller'])){
+    $controllerName = ucfirst(trim($_POST['controller']);
+}
+if (isset($_POST['action'])&&!empty($_POST['action'])){
+    $actionName = lcfirst(trim($_POST['action']);
+}
+$className = '\Controller\\'.$controllerName.'Controller';
 $sliderRepository = new SliderRepository;
+if(class_exists($className)){
+    /*@var \Controller\OrderController $controller */
+    $controller =  new $className();
+    if(method_exists($controller,$actionName.'Action')){
+        $actionName .= 'Action';
+        $controller->$actionName();
+    }
+    else  if(method_exists($controller,$defaultAction)){
+        $controller->$defaultAction();
+    }
+    $controller->calculatorAction();
+    
+}
 
 // get the array for the slider in the big slider section
 $sliderRepository->setCsvFile('csv/bigSlider.csv');
@@ -297,7 +319,9 @@ print '<!doctype html>
                     <br>
             <div id="checkbox">
                      <h3>Was möchtest du auf deiner Pizza haben?</h3>
-                 <form method="POST" >
+                 <form method="POST" action="index.php" >
+                 <input type="hidden" name="controller" value="order"/>
+                 <input type="hidden" name="action" value="calculator"/>
 
     
                          
