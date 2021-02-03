@@ -275,125 +275,115 @@ print '<!doctype html>
             </div>
             
             <div id="webcontent">
-            <div id="bestellen">
-                <h2>Bestellen</h2>
-                <p>Bitte beachten sie, dass aufgrund der Covid19 Krise Lieferzeiten evtl nicht eingehalten werden können.</p>
+                <div id="bestellen">
+                    <h2>Bestellen</h2>
+                    <p>Bitte beachten sie, dass aufgrund der Covid19 Krise Lieferzeiten evtl nicht eingehalten werden können.</p>
 
-                <ul>
-                    <li>Ab 10$ Besetllwert, kostenloser Versand</li>
-                    <li>Ab 5$  Besetllwert, 50% Versandkosten</li>
-                    <li>Unter 5$ Bestellwert, keine Erstattung</li>
-                </ul>
-                <hr>
-            </div>
+                        <ul>
+                            <li>Ab 10$ Besetllwert, kostenloser Versand</li>
+                            <li>Ab 5$  Besetllwert, 50% Versandkosten</li>
+                            <li>Unter 5$ Bestellwert, keine Erstattung</li>
+                         </ul>
+                     <hr>
+                </div>
            
-                    </div>
+            </div>
 
                 </form>
             </div>
 
             
-
-            <?php
-            
-            ?>
                     
                     <br>
             <div id="checkbox">
-            <h3>Was möchtest du auf deiner Pizza haben?</h3>
-    <form method="POST" >
+                     <h3>Was möchtest du auf deiner Pizza haben?</h3>
+                 <form method="POST" >
 
     
                          
 
-    <div id="eigene_Pizza_zusammenstellen">
+                         <div id="eigene_Pizza_zusammenstellen">
                     <h3>Oder kreiere deine eigene Pizza!</h3>
-                    <div id="teig_waehlen">
-                        <p>Hier kannst du dein Pizzateig auswählen!</p>
-                        <label for="Teig">Teig</label>
-                        <input list="Teigarten" id="Teig" name="Zutat[]" placeholder="auswählen">
+                             <div id="teig_waehlen">
+                                     <p>Hier kannst du dein Pizzateig auswählen!</p>
+                                             <label for="Teig">Teig</label>
+                                             <input list="Teigarten" id="Teig" name="Zutat[]" placeholder="auswählen">
                     
-                        <datalist id="Teigarten">
-                            <option value="Normal"></option>
-                            <option value="Kartoffel"></option>
-                            <option value="Knoblauch"></option>
-                            <option value="Kürbis"></option>
-                            <option value="Süß"></option>
-                            <option value="Vegan"></option>
-                            <option value="Glutenfrei"></option>
-                            <option value="Lactosefrei"></option>
-                        </datalist>
-                    </div>
-    <p><input type="checkbox" name="Zutat[]" value="Salami"/>Salami </p>
-    <p><input type="checkbox" name="Zutat[]" value="Käse">Käse</p>
-    <p><input type="checkbox" name="Zutat[]" value="Peperoni">Peperoni</p>
-    <p><input type="checkbox" name="Zutat[]" value="Champignon">Champignon</p>
-    <p><input type="checkbox" name="Zutat[]" value="Paprika">Paprika</p>
-    <p><input type="checkbox" name="Zutat[]" value="Thunfisch">Thunfisch</p>
-    <p><input type="checkbox" name="Zutat[]" value="Ananas">Ananas</p>
+                                     <datalist id="Teigarten">
+                                        <option value="Normal"></option>
+                                        <option value="Kartoffel"></option>
+                                        <option value="Knoblauch"></option>
+                                        <option value="Kürbis"></option>
+                                        <option value="Süß"></option>
+                                        <option value="Vegan"></option>
+                                        <option value="Glutenfrei"></option>
+                                        <option value="Lactosefrei"></option>
+                                     </datalist>
+                                </div>
+                                            <p><input type="checkbox" name="Zutat[]" value="Salami"/>Salami </p>
+                                            <p><input type="checkbox" name="Zutat[]" value="Käse">Käse</p>
+                                            <p><input type="checkbox" name="Zutat[]" value="Peperoni">Peperoni</p>
+                                            <p><input type="checkbox" name="Zutat[]" value="Champignon">Champignon</p>
+                                            <p><input type="checkbox" name="Zutat[]" value="Paprika">Paprika</p>
+                                            <p><input type="checkbox" name="Zutat[]" value="Thunfisch">Thunfisch</p>
+                                            <p><input type="checkbox" name="Zutat[]" value="Ananas">Ananas</p>
+                      </div>
+                        <div class="durchmesser_wählen">
 
+                            <p>Wie groß soll die Pizza sein?</p>
 
-
-
-    
-
-    </div>
-    <div class="durchmesser_wählen">
-
-<p>Wie groß soll die Pizza sein?</p>
-
-<label for="gr1">26cm:</label>
-<input type="radio" name="Zutat[]" id="gr1" value="26cm"><br>
-<label for="gr2">32cm:</label>
-<input type="radio" name="Zutat[]" id="gr2" value="32cm"><br>
-<label for="gr3">38cm:</label>
-<input type="radio" name="Zutat[]" id="gr3" value="38cm"><br>
-</div>
-<p><input type="submit" name="submit" value="Submit"></p>
-</form>
-<br>                
+                                <label for="gr1">26cm:</label>
+                                <input type="radio" name="Zutat[]" id="gr1" value="26cm"><br>
+                                <label for="gr2">32cm:</label>
+                                <input type="radio" name="Zutat[]" id="gr2" value="32cm"><br>
+                                <label for="gr3">38cm:</label>
+                                <input type="radio" name="Zutat[]" id="gr3" value="38cm"><br>
+                                </div>
+                                <p><input type="submit" name="submit" value="Submit"></p>
+                </form>
+           
+                <br>                
             <!--Please insert your career-code here-->
             <div class="banner">
-            <div class="topleft">
-             <h1>Karriere</h1>
-             <h4>Starten sie bei uns ihre Berufsbahn und erleben sie Freude, Spass und Fairness!</h2>
-            <table>
+            <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h1>Karriere</h1> <hr>
+                <h2>Starten sie bei uns ihre Berufsbahn und erleben sie Freude, Spass und Fairness!<hr></h2>
+                <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.
+                </p>
+              </div>
+              <div class="col-6"><p class="lol">Unsere Normen und Werte</p><hr>
+                <p>Bei uns wird ganz genau auf das <i>Wohlergehen</i> unserer Kunden und <b>Mitarbeiter</b> geachtet!
+                Wir achten darauf, dass diese gesund und stets fröhlich ihre Arbeit verrichten und bei Hilfe 
+                nicht Vernachlässigt werden. Nicht zufällig sind all unsere Bäcker sehr zufrieden mit ihrem Beruf
+                und stecken in ihre Arbeit viel Liebe rein! Bei Bewerbungen gelten also die Fähigkeiten nicht 
+                als ausschlaggebend, sondern unsere Werte wie Hilfsbereitschaft und Nettigkeit. Eine Welt ohne diesen
+                Werten, kann sich niemand von uns vorstellen.</p>
+              </div>
+                <div class="col-6"><p class="lol">Unser wertvollstes Gut</p><hr>
+                    <p>
+                    Unser Wertvollstes Gut ist nicht die Pizza, oder das Geschäft, oder vielleicht der Kunde, nein, es sind unsere 
+                    <b>Mitarbeiter</b>! Klar sind die Kunden für uns auch sehr wichtig und wir lieben sie mindestens genauso sehr,
+                    wie wir uns selbst lieben, aber unsere Mitarbeiter sind und werden immer unsere Priorität sein. Kunden kommen
+                    und gehen, Mitarbeiter aber prägen unsere Bäckerei und hinterlassen ein Vermächtnis. Deswegen ist es uns
+                    sehr wichtig, dass diese sich wohlfühlen und Spaß an ihrem Beruf empfinden!
+                    </p>
+                </div>
             </div>
-            <div id="karrieretext">
-            <tr>
-            <th>Unsere Normen und Werte</th>
-            <th>Unser Wertvollstes Gut:</th>
-            </tr>
-            <tr>
-            <td><p>Unsere Traditionsbäckerei hatte schon immer einen hohen Standard;<br>
-             nicht nur für die Gäste, sondern auch, was die Arbeitsqualität der Mitarbeiter.<br>
-              Wir vermeiden Stress, fördern Kreativität und unterstützen unsere Mitarbeiter!<br>
-            Aufgrund dieser Tugenden lieben unsere Mitarbeiter ihren Job.<br>
-            Zögern sie nicht und werden sie Teil von unserem großartigem Team!</p></td>
-            
+          </div>
+                   
+                                    <div class="quote">
+                                        <h3>"So eine tolle und  <br>
+                                            aufregende Arbeit <br>
+                                            möchte ich niemals <br>
+                                            aufgeben!" </h3>
+                                            <h4>~Luigi Musomicci, unser Bäcker</h4>
+                                
+                
+                                     </div>
             </div>
-            
-            
-            <div id="karriere2">
-            
-            <td>dsapicasocnasocnoascusanocbofouabfjsa cjsacsaudhosuhfsalncas ijsadpianssdis<br>
-            rieabckanuaeobfu iwodb b woidhnabsjd usj  wu bksjd aubw u kjsbda bdwuib <br>
-            iebdj  weijpnlkdf eip nl  iefnlskde  eifnlksd  wfeijlkns ejkfln fwejbks ewk jbfs<<br>
-            doua  aidlnks eip hsndlk  iejslf ewi flskn iewfsl nkd  eoj sflkndwe jilskniejflsnflsfns<br></td>
-            </tr>
-            </div>
-            </table>
-    
-         <div class="quote">
-             <h3>"So eine tolle und  <br>
-                aufregende Arbeit <br>
-                möchte ich niemals <br>
-                aufgeben!" </h3>
-                <h4>~Luigi Musomicci, unser Bäcker</h4>
-    
-    
-         </div>
-            
        
     
     
