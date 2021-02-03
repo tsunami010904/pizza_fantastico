@@ -63,6 +63,10 @@ footer hr {
     height: 5px !important;
 }
 
+footer td {
+    color: #fff;
+}
+
 a:link.whiteLink {
     color: white;
     text-decoration: underline;
@@ -203,12 +207,10 @@ td.size, td.price {
 .mealHead {
     font-size: 26px;
     background: rgb(182, 164, 105);
-.col-6 {
-    text-align: left;
 }
 
-.lol {
-    text-align: ;
+.col-6 {
+    text-align: left;
 }
 
 #webcontent{

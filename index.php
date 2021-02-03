@@ -1,19 +1,26 @@
 <?php
-include_once "src/Controller/OrderController.php";
+// include_once "src/Controller/OrderController.php"; 
+
 include_once 'repository.php';
+
+/*
 $controllerName = 'Default';
 $actionName = 'index';
 $defaultAction = 'indexAction';
 if (isset($_POST['controller'])&&!empty($_POST['controller'])){
-    $controllerName = ucfirst(trim($_POST['controller']);
+    $controllerName = ucfirst(trim($_POST['controller']));
 }
 if (isset($_POST['action'])&&!empty($_POST['action'])){
-    $actionName = lcfirst(trim($_POST['action']);
+    $actionName = lcfirst(trim($_POST['action']));
 }
 $className = '\Controller\\'.$controllerName.'Controller';
+*/
+
 $sliderRepository = new SliderRepository;
+
+/*
 if(class_exists($className)){
-    /*@var \Controller\OrderController $controller */
+    (another-comment start) @var \Controller\OrderController $controller (another-comment end)
     $controller =  new $className();
     if(method_exists($controller,$actionName.'Action')){
         $actionName .= 'Action';
@@ -25,6 +32,7 @@ if(class_exists($className)){
     $controller->calculatorAction();
     
 }
+*/
 
 // get the array for the slider in the big slider section
 $sliderRepository->setCsvFile('csv/bigSlider.csv');
@@ -105,20 +113,14 @@ print '<!doctype html>
                             <li class="nav-item active">
                                 <a class="nav-link" aria-current="page" href="#aboutUs">Über uns</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Speisekarte</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                                    <li><a class="dropdown-item" href="speisekarte.html">Angebot</a></li>
-                                    <li><a class="dropdown-item" href="speisekarte.html">Klassiker</a></li>
-                                    <li><a class="dropdown-item" href="speisekarte.html">Pizza-Vielfalt</a></li>
-                                    <li><a class="dropdown-item" href="speisekarte.html">Allergien</a></li>
-                                </ul>
-                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" aria-current="page" href="#menu">Speisekarte</a>
+                            </li> 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Bestellen</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-                                    <li><a class="dropdown-item" href="bestellen.html#PizzaBestellen">Aus der Speisekarte</a></li>
-                                    <li><a class="dropdown-item" href="bestellen.html#eigene_Pizza_zusammenstellen">Eigene Kreation</a></li>
+                                    <li><a class="dropdown-item" href="#menu">Aus der Speisekarte</a></li>
+                                    <li><a class="dropdown-item" href="#bestellen">Eigene Kreation</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -227,16 +229,17 @@ print '<!doctype html>
                         
                                 <h2>Auf Jobsuche?</h2>
                                 <p>Beginnen Sie Ihre Karriere bei Pizza Fantastico! Abwechslungsreiche Tätigkeiten, flexible Arbeitszeiten und freundliche Kollegen warten auf Sie! </p>
-                                <p><a class="btn btn-secondary" href="#" role="button">Ihre Möglichkeiten »</a></p>
+                                <p><a class="btn btn-secondary" href="#career" role="button">Ihre Möglichkeiten »</a></p>
                         </div><!-- /.col-lg-4 -->
                     </div><!-- /.row -->
-
-                    <hr>
+                    <br>
                 
                 </div>
 
                 <!-- about us section -->
                 <section id="aboutUs">
+                    <hr>
+                    <br>
                     <div class="container">                    
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static pizzaBackground">
@@ -293,9 +296,9 @@ print '<!doctype html>
                     </div>
                 </section>
                 
-                <br>
                 <!--Dishes-->
-                <div id="preisliste">
+                <div id="menu">
+                    <br><br>
                     <table class="newDishes">
                         <thead class="mealHead">
                             <tr>
@@ -381,7 +384,7 @@ print '<!doctype html>
            
                 <br>                
             <!--Please insert your career-code here-->
-            <div class="banner">
+            <div class="banner" id="career">
             <div class="container">
             <div class="row">
               <div class="col-12">
@@ -435,7 +438,6 @@ print '<!doctype html>
                                 <a href="https://twitter.com/?lang=de" target="_blank"><i class="fab fa-twitter text-white mr-4"></i></a>
                                 <a href="https://github.com/tsunami010904/pizza_fantastico.github.io" target="_blank"><i class="fab fa-github text-white mr-4"></i></a>
                                 <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube text-white mr-4"></i></a>
-                                <a href="#"><i class="fab fa-paypal text-white mr-4"></i></a>
                             </div>
                         </div>
                     </div>
@@ -543,6 +545,7 @@ function buildDishes(array $dishes): string
     <td class="size size3">38cm</td>
     <td class="price">%6$s</td>
 </tr>';
+
 $result = '';
 foreach($dishes as $tr) {    //Kommentar
     $result .= vsprintf($template, [ $tr[0], $tr[1], $tr[2], $tr[3],$tr[4],$tr[5]]);
@@ -550,6 +553,7 @@ foreach($dishes as $tr) {    //Kommentar
 return $result;
 }
 
+/*
 $zutaten = "";                  
 if (isset($_POST["submit"]))
 {
@@ -570,5 +574,6 @@ if (isset($_POST["submit"]))
 }
 $filename = "data.txt";
 file_put_contents($filename, $zutaten);
+*/
 
 
