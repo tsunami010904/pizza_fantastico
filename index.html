@@ -1,88 +1,4 @@
-<?php
-// include_once "src/Controller/OrderController.php"; 
-
-include_once 'repository.php';
-
-/*
-$controllerName = 'Default';
-$actionName = 'index';
-$defaultAction = 'indexAction';
-if (isset($_POST['controller'])&&!empty($_POST['controller'])){
-    $controllerName = ucfirst(trim($_POST['controller']));
-}
-if (isset($_POST['action'])&&!empty($_POST['action'])){
-    $actionName = lcfirst(trim($_POST['action']));
-}
-$className = '\Controller\\'.$controllerName.'Controller';
-*/
-
-$sliderRepository = new SliderRepository;
-
-/*
-if(class_exists($className)){
-    (another-comment start) @var \Controller\OrderController $controller (another-comment end)
-    $controller =  new $className();
-    if(method_exists($controller,$actionName.'Action')){
-        $actionName .= 'Action';
-        $controller->$actionName();
-    }
-    else  if(method_exists($controller,$defaultAction)){
-        $controller->$defaultAction();
-    }
-    $controller->calculatorAction();
-    
-}
-*/
-
-// get the array for the slider in the big slider section
-$sliderRepository->setCsvFile('csv/bigSlider.csv');
-$bigSlider = $sliderRepository->readCsvFile();
-
-// get the array for the slider in the about us section
-$sliderRepository->setCsvFile('csv/mySlider.csv');
-$aboutUsSlider = $sliderRepository->readCsvFile();
-
-// get the array for the slider in the about us section
-$sliderRepository->setCsvFile('csv/menu.csv');
-$pizza = $sliderRepository->readCsvFile();
-
-// The array $pizzaOld is not necessary if getting the csv-file works
-$pizzaOld = [
-    [
-        "name" => "Margherita",
-        "picture" => "images/meals/pizza5.jpg",
-        "ingredients" => "Tomatensauce, Käse, Basilikum",
-        "price1" => "5, 00",
-        "price2" => "5, 50",
-        "price3" => "7, 00",
-    ], 
-    [
-        "name" => "Salami", 
-        "picture" => "images/meals/pizza2.jpg",
-        "ingredients" => "Tomatensauce, Käse, Salami",
-        "price1" => "6, 00",
-        "price2" => "6, 50",
-        "price3" => "8, 00",
-    ],
-    [
-        "name" => "Tuna",
-        "picture" => "images/meals/pizza6.jpg",
-        "ingredients" => "Tomatensauce, Käse, Thunfisch, Zwiebeln",
-        "price1" => "7, 00",
-        "price2" => "7, 50",
-        "price3" => "9, 00",
-    ],
-    [
-        "name" => "Vegan",
-        "picture" => "images/meals/pizza7.jpg",
-        "ingredients" => "Tomatensauce, frische Tomaten, Basilikum",
-        "price1" => "6, 00",
-        "price2" => "6, 50",
-        "price3" => "7, 50",
-    ],
-];
-
-print '<!doctype html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -103,7 +19,7 @@ print '<!doctype html>
             <!-- navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 fixed-top opacityLess">
                 <div class="container-xl">
-                    <a class="navbar-brand" href="index.php"><img src="images/logos/logo.png" alt="Pizzeria Logo"/> Pizza Fantastico</a>
+                    <a class="navbar-brand" href="#"><img src="images/logos/logo.png" alt="Pizzeria Logo"/> Pizza Fantastico</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -158,39 +74,46 @@ print '<!doctype html>
                 <section id="bigSlider">
                     <div class="container">
                         <div id="bigSliderCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                            <ol class="carousel-indicators">';
-            
-                            for ($i = 0; $i < count($bigSlider); $i++) {
-                                $active = "";
-                                if ($i == 0) {
-                                    $active = "active";
-                                }
-                                print '<li data-bs-target="#bigSliderCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
-                            }
-            
-                            print '
+                            <ol class="carousel-indicators">
+                                <li data-bs-target="#bigSliderCarousel" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#bigSliderCarousel" data-bs-slide-to="1" class=""></li>
+                                <li data-bs-target="#bigSliderCarousel" data-bs-slide-to="2" class=""></li>
                             </ol>
                     
-                            <div class="carousel-inner">';
-                            
-                            $active2 = " active";
-                            foreach ($bigSlider as $slide) {
-                                print '
-            
-                                <div class="carousel-item' . $active2 . '">
-                                    <div class="myBackgroundImages" style="background-image: url(' . $slide[3] . ')"></div>  
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="myBackgroundImages" style="background-image: url(images/sliders_icons/pict6.jpg)"></div>  
                                     <div class="container">
-                                        <div class="carousel-caption' . $slide[5]. '">
-                                            <h1>' . $slide[0] . '</h1>
-                                            <p>' . $slide[1] . '</p>
-                                            <p><a class="btn btn-lg btn-primary" href="' . $slide[4] . '" role="button">' . $slide[2] . '</a></p>
+                                        <div class="carousel-caption text-start">
+                                            <h1>Ein Ort des Wohlfühlens</h1>
+                                            <p>Besuchen Sie unserer Restaurant und genießen Sie Ihre Pizza in angenehmer und ruhiger Atmosphäre, sofern Covid-19 keine große Gefahr mehr darstellt.</p>
+                                            <p><a class="btn btn-lg btn-primary" href="#aboutUs" role="button">Zur Bildergalerie</a></p>
                                         </div>
                                     </div>
-                                </div>';
-                                $active2 = "";
-                            }
+                                </div>
                     
-                            print '
+                                <div class="carousel-item">
+                                    <div class="myBackgroundImages" style="background-image: url(images/sliders_icons/pict11.jpg);"></div>
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <h1>Unser Qualitätsversprechen</h1>
+                                            <p>All unsere Lebensmittel sind regional und hochwertig! Unsere Pizzen werden von Hand gemacht und im Steinofen gebacken.</p>
+                                            <p><a class="btn btn-lg btn-primary" href="#aboutUs" role="button">Mehr Eindrücke</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="carousel-item">
+                                    <div class="myBackgroundImages" style="background-image: url(images/sliders_icons/pict12.jpg);"></div>
+                                    <div class="container">
+                                        <div class="carousel-caption text-end">
+                                            <h1>Bunte Vielfalt</h1>
+                                            <p>Stöbern Sie durch unsere Speisekarte und finden Sie Ihre Lieblingspizza - oder erstellen Sie sich Ihre eigene nach Ihren Wünschen!</p>
+                                            <p><a class="btn btn-lg btn-primary" href="#menu" role="button">Zur Speisekarte</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
                                 <a class="carousel-control-prev" href="#bigSliderCarousel" role="button" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
@@ -245,42 +168,85 @@ print '<!doctype html>
                             <div class="col p-4 d-flex flex-column position-static pizzaBackground">
                                 <strong class="d-inline-block mb-2 text-primary">#1971</strong>
                                 <h3 class="mb-0">Über uns</h3>
-                                <div class="mb-1 text-muted">2. Feb</div>
+                                <div class="mb-1 text-muted">4. Feb</div>
                                 <h5 class="card-text mb-auto">Wir betreiben seit 1971 ein traditionelles itatienisches Restaurant im Herzen Frankfurts. Hier sind einige Eindrücke.</h5>
                             </div>
                             <div class="col-md-8 mx-auto d-lg-block">
                                 <div id="aboutUsCarousel" class="carousel slide " data-bs-ride="carousel">
-                                    <ol class="carousel-indicators">';
-
-                                    for ($i = 0; $i < count($aboutUsSlider); $i++) {
-                                        $active = "";
-                                        if ($i == 0) {
-                                            $active = "active";
-                                        }
-                                        print '<li data-bs-target="#aboutUsCarousel" data-bs-slide-to="' . $i . '" class="' . $active . '"></li>';
-                                    }
-
-                                    print '
+                                    <ol class="carousel-indicators">
+                                        <li data-bs-target="#aboutUsCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#aboutUsCarousel" data-bs-slide-to="1" class=""></li>
+                                        <li data-bs-target="#aboutUsCarousel" data-bs-slide-to="2" class=""></li>
+                                        <li data-bs-target="#aboutUsCarousel" data-bs-slide-to="3" class=""></li>
+                                        <li data-bs-target="#aboutUsCarousel" data-bs-slide-to="4" class=""></li>
+                                        <li data-bs-target="#aboutUsCarousel" data-bs-slide-to="5" class=""></li>
+                                        <li data-bs-target="#aboutUsCarousel" data-bs-slide-to="6" class=""></li>
                                     </ol>
                             
-                                    <div class="carousel-inner">';
-                                    
-                                    $active2 = " active";
-                                    foreach ($aboutUsSlider as $slide) {
-                                        print '
-
-                                        <div class="carousel-item smallItem' . $active2 . '">
-                                            <div class="mySmallBackgroundImages" style="background-image: url(' . $slide[1] . ')"></div>  
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item smallItem active">
+                                            <div class="mySmallBackgroundImages" style="background-image: url(images/sliders_icons/pict14.jpg)"></div>  
                                             <div class="container">
                                                 <div class="carousel-caption mb-5">
-                                                    <h3>' . $slide[0] . '</h3>
+                                                    <h3>Erleben Sie einen Genuss der Extraklasse!</h3>
                                                 </div>
                                             </div>
-                                        </div>';
-                                        $active2 = "";
-                                    }
-                            
-                                    print '
+                                        </div>
+
+                                        <div class="carousel-item smallItem">
+                                            <div class="mySmallBackgroundImages" style="background-image: url(images/sliders_icons/pict13.jpg)"></div>  
+                                            <div class="container">
+                                                <div class="carousel-caption mb-5">
+                                                    <h3>Hier könnten Sie Ihre Pizza genießen!</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item smallItem">
+                                            <div class="mySmallBackgroundImages" style="background-image: url(images/sliders_icons/pict17.jpg)"></div>  
+                                            <div class="container">
+                                                <div class="carousel-caption mb-5">
+                                                    <h3>Exzellente Meisterköche</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item smallItem">
+                                            <div class="mySmallBackgroundImages" style="background-image: url(images/sliders_icons/pict16.jpg)"></div>  
+                                            <div class="container">
+                                                <div class="carousel-caption mb-5">
+                                                    <h3>Frische Zutaten</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item smallItem">
+                                            <div class="mySmallBackgroundImages" style="background-image: url(images/sliders_icons/pict15.jpg)"></div>  
+                                            <div class="container">
+                                                <div class="carousel-caption mb-5">
+                                                    <h3>Feinste Gewürze</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item smallItem">
+                                            <div class="mySmallBackgroundImages" style="background-image: url(images/sliders_icons/cocktail.jpg)"></div>  
+                                            <div class="container">
+                                                <div class="carousel-caption mb-5">
+                                                    <h3>Genießen Sie nach dem Feierabend einen frischen Cocktail!</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item smallItem">
+                                            <div class="mySmallBackgroundImages" style="background-image: url(images/sliders_icons/pict4.jpg)"></div>  
+                                            <div class="container">
+                                                <div class="carousel-caption mb-5">
+                                                    <h3>Ihre Bestellung ist im Nu unterwegs!</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
                                         <a class="carousel-control-prev" href="#aboutUsCarousel" role="button" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
@@ -307,7 +273,131 @@ print '<!doctype html>
                                 <th>Preis(€)</th>
                             </tr>
                         </thead>
-                        '.buildDishes($pizza).'
+                        <div>
+                            <tr class="meal">
+                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza5.jpg')"></div></div></td>
+                                <td class="name">Margherita</td>
+                                <td class="size size1">26cm</td>
+                                <td class="price">5,00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Basilikum</td>
+                                <td class="size size2">32cm</td>
+                                <td class="price">6,00</td>
+                            </tr>
+                            <tr>
+                                <td class="size size3">38cm</td>
+                                <td class="price">7,00</td>
+                            </tr>
+                        </div>
+                        
+                        <div>
+                            <tr class="meal">
+                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza2.jpg')"></div></div></td>
+                                <td class="name">Salami</td>
+                                <td class="size size1">26cm</td>
+                                <td class="price">5,00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Salami</td>
+                                <td class="size size2">32cm</td>
+                                <td class="price">6,00</td>
+                            </tr>
+                            <tr>
+                                <td class="size size3">38cm</td>
+                                <td class="price">7,00</td>
+                            </tr>
+                        </div>
+
+                        <div>
+                            <tr class="meal">
+                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza6.jpg')"></div></div></td>
+                                <td class="name">Tuna</td>
+                                <td class="size size1">26cm</td>
+                                <td class="price">5,00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Thunfisch, Zwiebeln</td>
+                                <td class="size size2">32cm</td>
+                                <td class="price">6,00</td>
+                            </tr>
+                            <tr>
+                                <td class="size size3">38cm</td>
+                                <td class="price">7,00</td>
+                            </tr>
+                        </div>
+
+                        <div>
+                            <tr class="meal">
+                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza3.jpg')"></div></div></td>
+                                <td class="name">Champignon</td>
+                                <td class="size size1">26cm</td>
+                                <td class="price">5,00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Champignon, Basilikum</td>
+                                <td class="size size2">32cm</td>
+                                <td class="price">6,00</td>
+                            </tr>
+                            <tr>
+                                <td class="size size3">38cm</td>
+                                <td class="price">7,00</td>
+                            </tr>
+                        </div>
+
+                        <div>
+                            <tr class="meal">
+                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza7.jpg')"></div></div></td>
+                                <td class="name">Vegan</td>
+                                <td class="size size1">26cm</td>
+                                <td class="price">5,00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, frische Tomaten, Basilikum</td>
+                                <td class="size size2">32cm</td>
+                                <td class="price">6,00</td>
+                            </tr>
+                            <tr>
+                                <td class="size size3">38cm</td>
+                                <td class="price">7,00</td>
+                            </tr>
+                        </div>
+
+                        <div>
+                            <tr class="meal">
+                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza8.jpg')"></div></div></td>
+                                <td class="name">Mozarella</td>
+                                <td class="size size1">26cm</td>
+                                <td class="price">5,00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="ingredients">Tomatensauce, Mozarella, Basilikum</td>
+                                <td class="size size2">32cm</td>
+                                <td class="price">6,00</td>
+                            </tr>
+                            <tr>
+                                <td class="size size3">38cm</td>
+                                <td class="price">7,00</td>
+                            </tr>
+                        </div>
+                        
+                        <div>
+                            <tr class="meal">
+                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza1.jpg')"></div></div></td>
+                                <td class="name">Fantastico</td>
+                                <td class="size size1">26cm</td>
+                                <td class="price">5,00</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Schinken, Peperoni, Champignon, schwarze Oliven</td>
+                                <td class="size size2">32cm</td>
+                                <td class="price">6,00</td>
+                            </tr>
+                            <tr>
+                                <td class="size size3">38cm</td>
+                                <td class="price">7,00</td>
+                            </tr>
+                        </div>
                     </table>
                 </div>
             </div>
@@ -530,54 +620,4 @@ print '<!doctype html>
         <!-- Custom js -->
         <script src="javaScript/main.js"></script>
     </body>
-</html>';
-
-function buildDishes(array $dishes): string 
-{
-    $template = '<tr class="meal">
-    <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url(%2$s)"></div></div></td>
-    <td class="name">%1$s</td>
-    <td class="size size1">26cm</td>
-    <td class="price">%4$s</td>
-</tr>
-<tr>
-    <td rowspan="2" class="ingredients">%3$s</td>
-    <td class="size size2">32cm</td>
-    <td class="price">%5$s</td>
-</tr>
-<tr>
-    <td class="size size3">38cm</td>
-    <td class="price">%6$s</td>
-</tr>';
-
-$result = '';
-foreach($dishes as $tr) {    //Kommentar
-    $result .= vsprintf($template, [ $tr[0], $tr[1], $tr[2], $tr[3],$tr[4],$tr[5]]);
-} 
-return $result;
-}
-
-/*
-$zutaten = "";                  
-if (isset($_POST["submit"]))
-{
-    if(!empty($_POST["Zutat"]))
-    {    
-         
-        
-        foreach($_POST["Zutat"] as $zutat)
-        {
-            echo $zutat ." ,";
-            $zutaten .=  $zutat ."\t";
-        }
-    }
-    else 
-    {
-        echo"<h3>Bitte wähle mindestens eine Zutat aus</h3>";
-    }
-}
-$filename = "data.txt";
-file_put_contents($filename, $zutaten);
-*/
-
-
+</html>
