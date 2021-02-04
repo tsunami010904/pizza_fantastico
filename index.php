@@ -103,7 +103,7 @@ print '<!doctype html>
             <!-- navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 fixed-top opacityLess">
                 <div class="container-xl">
-                    <a class="navbar-brand" href="index.php"><img src="images/logos/logo.png" alt="Pizzeria Logo"/> Pizza Fantastico</a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logos/red_logo.jpg" alt="Pizzeria Logo" style="width: 50px; height: 50px; border-radius: 20%;" /> Pizza Fantastico</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
