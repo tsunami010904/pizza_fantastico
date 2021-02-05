@@ -182,26 +182,28 @@ td.ingredients {
 
 dl, dd {
     margin: 0;
+    padding: 0;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+    text-align: center !important;
 }
 
 dd.name {
     font-style: italic !important;
     font-size: 30px !important;
     background: rgb(255, 233, 159);
-    border: 1px solid #000;
 }
 
 dd.ingredients {
     font-size: 18px;
     color: #000;
     background: rgb(187, 177, 146);
-    border: 1px solid #000;
 }
 
 dd.size, dd.price {
     font-size: 26px;
-    border: 1px solid #000;
-    margin: 0;
 }
 
 .size.size1 {
@@ -228,6 +230,10 @@ dd.size, dd.price {
     background: rgb(182, 164, 105);
 }
 
+.fullHeight {
+    min-height: 180px;
+}
+
 .col-6 {
     text-align: left;
 }
@@ -235,10 +241,7 @@ dd.size, dd.price {
 #webcontent{
     background: rgba(7, 7, 8, 0) !important;
 }
+
 #color{
     background: black;
-}
-
-.fullHeight {
-    min-height: 180px;
 }
