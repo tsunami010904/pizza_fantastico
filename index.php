@@ -557,7 +557,7 @@ foreach($dishes as $tr) {    //Kommentar
 return $result;
 }
 
-/*
+
 $zutaten = "";                  
 if (isset($_POST["submit"]))
 {
@@ -578,6 +578,5 @@ if (isset($_POST["submit"]))
 }
 $filename = "data.txt";
 file_put_contents($filename, $zutaten);
-*/
 
 

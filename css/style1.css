@@ -219,3 +219,7 @@ td.size, td.price {
 #color{
     background: black;
 }
+
+.fullHeight {
+    min-height: 180px;
+}
