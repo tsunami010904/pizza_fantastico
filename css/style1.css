@@ -178,11 +178,30 @@ td.ingredients {
     font-size: 18px;
     color: #000;
     background: rgb(187, 177, 146);
-
 }
 
-td.size, td.price {
+dl, dd {
+    margin: 0;
+}
+
+dd.name {
+    font-style: italic !important;
+    font-size: 30px !important;
+    background: rgb(255, 233, 159);
+    border: 1px solid #000;
+}
+
+dd.ingredients {
+    font-size: 18px;
+    color: #000;
+    background: rgb(187, 177, 146);
+    border: 1px solid #000;
+}
+
+dd.size, dd.price {
     font-size: 26px;
+    border: 1px solid #000;
+    margin: 0;
 }
 
 .size.size1 {
