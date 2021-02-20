@@ -58,23 +58,17 @@ table {
     border-radius: 100%;
 }
 
-footer hr {
-    width: 90%;
-    height: 5px !important;
-}
+a.whiteLink {
 
-footer td {
-    color: #fff;
-}
+    &:link {
+        color: white;
+        text-decoration: underline;
+    }
 
-a:link.whiteLink {
-    color: white;
-    text-decoration: underline;
-}
-
-a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
-    color: rgba(255, 255, 255, 0.562);
-    text-decoration: none;
+    &:visited, &:hover, &:active {
+        color: rgba(255, 255, 255, 0.562);
+        text-decoration: none;
+    }
 }
 
 .whiteSection {
@@ -84,10 +78,6 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
 
 .pizzaBackground {
     background: #BF9039;
-}
-
-#copyright {
-    background-color: #1A1A1A;
 }
 
 #checkbox{
@@ -149,10 +139,9 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
 .mealItem {
     min-height: 130px;
     min-width: 80px;
-    max-width: 250px;
-    background: #000;
+    background: rgb(92, 55, 55);
     position: relative;
-    border-radius: 10px;
+    border: 10px solid rgb(92, 55, 55);
 }
 
 .mealImages {
@@ -163,21 +152,8 @@ a:visited.whiteLink, a:hover.whiteLink, a:active.whiteLink {
     top: 0;
     background-position: center;
     background-size: cover;
-    border: 1px solid #000;
+    border: 1px solid black;
     border-radius: 10px;
-}
-
-td.name {
-    font-style: italic !important;
-    font-size: 30px !important;
-    background: rgb(255, 233, 159);
-
-}
-
-td.ingredients {
-    font-size: 18px;
-    color: #000;
-    background: rgb(187, 177, 146);
 }
 
 dl, dd {
@@ -190,52 +166,47 @@ dl, dd {
     text-align: center !important;
 }
 
-dd.name {
-    font-style: italic !important;
-    font-size: 30px !important;
-    background: rgb(255, 233, 159);
+dl {
+    &.fullHeight {
+        min-height: 180px;
+    }
 }
 
-dd.ingredients {
-    font-size: 18px;
-    color: #000;
-    background: rgb(187, 177, 146);
-}
+dd {
+    &.name {
+        font-style: italic !important;
+        font-size: 30px !important;
+        background: $nameBgColor;
+    }
 
-dd.size, dd.price {
-    font-size: 26px;
-}
+    &.ingredients {
+        font-size: 18px;
+        color: #000;
+        background: $ingredientsBgColor;
+    }
 
-.size.size1 {
-    color: rgba(167, 17, 17, 0.692);
-    background: rgb(248, 223, 140);
-}
+    &.size {
+        font-size: 26px;
+        &.size1 {
+            color: $size1Color;
+            background: $size1BgColor;
+        }
 
-.size.size2 {
-    color: rgb(14, 14, 148);
-    background: rgba(248, 223, 140, 0.767);
-}
+        &.size2 {
+            color: $size2Color;
+            background: $size2BgColor;
+        }
 
-.size.size3 {
-    color: rgb(116, 14, 141);
-    background: rgba(245, 229, 177, 0.767);
-}
-
-.price {
-    background: rgba(248, 223, 140, 0.3);
-}
-
-.mealHead {
-    font-size: 26px;
-    background: rgb(182, 164, 105);
-}
-
-.fullHeight {
-    min-height: 180px;
-}
-
-.col-6 {
-    text-align: left;
+        &.size3 {
+            color: $size3Color;
+            background: $size3BgColor;
+        }
+    }
+    
+    &.price {
+        font-size: 26px;
+        background: $priceBgColor;
+    }
 }
 
 #webcontent{

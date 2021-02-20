@@ -1,0 +1,353 @@
+body {
+  position: relative;
+}
+
+#page-wrapper {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/meals/start.jpg);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/meals/start.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+#main {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: default;
+  height: 100vh;
+  min-height: 35em;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+#main:after {
+  -moz-pointer-events: none;
+  -webkit-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  -webkit-transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out;
+  -webkit-transition-delay: 1.25s;
+  transition-delay: 1.25s;
+  content: '';
+  background: #2e3842;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#main h2 {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease, -webkit-transform 0.5s ease;
+  display: inline-block;
+  font-size: 2.0em;
+  opacity: 1;
+  padding: 0.35em 1em;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 0.225em;
+  line-height: 2em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+}
+
+#main h2:before, #main h2:after {
+  -webkit-transition: width 0.85s ease;
+  transition: width 0.85s ease;
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+  background: #fff;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+}
+
+#main h2:before {
+  top: 0;
+  left: 0;
+}
+
+#main h2:after {
+  bottom: 0;
+  right: 0;
+}
+
+#main .inner {
+  display: none;
+}
+
+#main p {
+  letter-spacing: 0.225em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+#main a {
+  letter-spacing: 0.225em;
+  text-transform: capitalize;
+}
+
+body {
+  font-family: serif;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 0 0 0px;
+}
+
+table, th, td {
+  border: none;
+  padding: 2px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-item {
+  height: 32rem;
+  background: #000;
+  position: relative;
+}
+
+.smallItem {
+  height: 24rem;
+  background: #000;
+  position: relative;
+}
+
+.myBackgroundImages {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.mySmallBackgroundImages {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.iconPictures {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+}
+
+a.whiteLink:link {
+  color: white;
+  text-decoration: underline;
+}
+
+a.whiteLink:visited, a.whiteLink:hover, a.whiteLink:active {
+  color: rgba(255, 255, 255, 0.562);
+  text-decoration: none;
+}
+
+.whiteSection {
+  background: white;
+  padding: 40px;
+}
+
+.pizzaBackground {
+  background: #BF9039;
+}
+
+#checkbox {
+  text-align: center;
+}
+
+#bestellen {
+  text-align: center;
+  background-color: white;
+}
+
+#preisliste {
+  text-align: center;
+}
+
+.topleft {
+  text-align: center;
+  vertical-align: top;
+  -ms-flex-item-align: auto;
+      -ms-grid-row-align: auto;
+      align-self: auto;
+  color: white;
+}
+
+.banner {
+  position: relative;
+  background-image: url(https://cdn.pixabay.com/photo/2015/09/16/20/10/dough-943245__480.jpg);
+  min-height: 1200wh;
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  color: white;
+  font-size: large;
+  height: 50rem;
+}
+
+.quote {
+  text-align: center;
+}
+
+#karrieretext {
+  font-size: small;
+  text-align: left;
+}
+
+.opacityLess {
+  opacity: .9;
+}
+
+.carousel-caption p {
+  font-size: 22px;
+}
+
+.newDishes, .newDishes td, .newDishes th {
+  border: 1px solid #000;
+}
+
+.newDishes .meal tr {
+  border-top: 2px solid #000;
+}
+
+.mealItem {
+  min-height: 130px;
+  min-width: 80px;
+  background: #5c3737;
+  position: relative;
+  border: 10px solid #5c3737;
+}
+
+.mealImages {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+dl, dd {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  -webkit-margin-start: 0 !important;
+          margin-inline-start: 0 !important;
+  -webkit-margin-end: 0 !important;
+          margin-inline-end: 0 !important;
+  text-align: center !important;
+}
+
+dl.fullHeight {
+  min-height: 180px;
+}
+
+dd.name {
+  font-style: italic !important;
+  font-size: 30px !important;
+  background: #ffe99f;
+}
+
+dd.ingredients {
+  font-size: 18px;
+  color: #000;
+  background: #bbb192;
+}
+
+dd.size {
+  font-size: 26px;
+}
+
+dd.size.size1 {
+  color: rgba(167, 17, 17, 0.692);
+  background: #f8df8c;
+}
+
+dd.size.size2 {
+  color: #0e0e94;
+  background: rgba(248, 223, 140, 0.767);
+}
+
+dd.size.size3 {
+  color: #740e8d;
+  background: rgba(245, 229, 177, 0.767);
+}
+
+dd.price {
+  font-size: 26px;
+  background: rgba(248, 223, 140, 0.3);
+}
+
+#webcontent {
+  background: rgba(7, 7, 8, 0) !important;
+}
+
+#color {
+  background: black;
+}
+
+footer hr {
+  width: 90%;
+  height: 5px !important;
+}
+
+footer td {
+  color: #fff;
+}
+
+footer #copyright {
+  background-color: #1A1A1A;
+}
+/*# sourceMappingURL=main.css.map */

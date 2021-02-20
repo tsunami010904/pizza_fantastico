@@ -6,12 +6,11 @@
         <title>Pizza Fantastico</title>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css?family=El+Messiri:500|Lobster" rel="stylesheet">
         <!-- Minh Thais links -->
-        <link rel="stylesheet" href="css/style1.css">
+        <link rel="stylesheet" href="styles/main.css">
         <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
     </head>
     <body>
@@ -265,140 +264,148 @@
                 <!--Dishes-->
                 <div id="menu">
                     <br><br>
-                    <table class="newDishes">
-                        <thead class="mealHead">
-                            <tr>
-                                <th colspan="2"><i>Speisekarte</i></th>
-                                <th style="font-size: 40px;">⌀</th>
-                                <th>Preis(€)</th>
-                            </tr>
-                        </thead>
-                        <div>
-                            <tr class="meal">
-                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza5.jpg')"></div></div></td>
-                                <td class="name">Margherita</td>
-                                <td class="size size1">26cm</td>
-                                <td class="price">5,00</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Basilikum</td>
-                                <td class="size size2">32cm</td>
-                                <td class="price">6,00</td>
-                            </tr>
-                            <tr>
-                                <td class="size size3">38cm</td>
-                                <td class="price">7,00</td>
-                            </tr>
+                    <div class="container">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                            <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(images/meals/pizza5.jpg)"></div></div>
+                            <div class="col-md-6">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="name col-12">Margherita</dd>
+                                    <dd rowspan="2" class="ingredients col-12">Tomatensauce, Käse, Basilikum</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                                    <dd class="price col-6">5,00</dd>
+                                    <dd class="size size2 col-6">32cm</dd>
+                                    <dd class="price col-6">6,00</dd>
+                                    <dd class="size size3 col-6">38cm</dd>
+                                    <dd class="price col-6">7,00</dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                            <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(images/meals/pizza2.jpg)"></div></div>
+                            <div class="col-md-6">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="name col-12">Salami</dd>
+                                    <dd rowspan="2" class="ingredients col-12">Tomatensauce, Käse, Salami</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                                    <dd class="price col-6">5,00</dd>
+                                    <dd class="size size2 col-6">32cm</dd>
+                                    <dd class="price col-6">6,00</dd>
+                                    <dd class="size size3 col-6">38cm</dd>
+                                    <dd class="price col-6">7,00</dd>
+                                </dl>
+                            </div>
                         </div>
                         
-                        <div>
-                            <tr class="meal">
-                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza2.jpg')"></div></div></td>
-                                <td class="name">Salami</td>
-                                <td class="size size1">26cm</td>
-                                <td class="price">5,00</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Salami</td>
-                                <td class="size size2">32cm</td>
-                                <td class="price">6,00</td>
-                            </tr>
-                            <tr>
-                                <td class="size size3">38cm</td>
-                                <td class="price">7,00</td>
-                            </tr>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                            <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(images/meals/pizza6.jpg)"></div></div>
+                            <div class="col-md-6">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="name col-12">Tuna</dd>
+                                    <dd rowspan="2" class="ingredients col-12">Tomatensauce, Käse, Thunfisch, Zwiebeln</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                                    <dd class="price col-6">5,00</dd>
+                                    <dd class="size size2 col-6">32cm</dd>
+                                    <dd class="price col-6">6,00</dd>
+                                    <dd class="size size3 col-6">38cm</dd>
+                                    <dd class="price col-6">7,00</dd>
+                                </dl>
+                            </div>
                         </div>
 
-                        <div>
-                            <tr class="meal">
-                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza6.jpg')"></div></div></td>
-                                <td class="name">Tuna</td>
-                                <td class="size size1">26cm</td>
-                                <td class="price">5,00</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Thunfisch, Zwiebeln</td>
-                                <td class="size size2">32cm</td>
-                                <td class="price">6,00</td>
-                            </tr>
-                            <tr>
-                                <td class="size size3">38cm</td>
-                                <td class="price">7,00</td>
-                            </tr>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                            <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(images/meals/pizza3.jpg)"></div></div>
+                            <div class="col-md-6">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="name col-12">Champignon</dd>
+                                    <dd rowspan="2" class="ingredients col-12">Tomatensauce, Käse, Champignon, Basilikum</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                                    <dd class="price col-6">5,00</dd>
+                                    <dd class="size size2 col-6">32cm</dd>
+                                    <dd class="price col-6">6,00</dd>
+                                    <dd class="size size3 col-6">38cm</dd>
+                                    <dd class="price col-6">7,00</dd>
+                                </dl>
+                            </div>
                         </div>
 
-                        <div>
-                            <tr class="meal">
-                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza3.jpg')"></div></div></td>
-                                <td class="name">Champignon</td>
-                                <td class="size size1">26cm</td>
-                                <td class="price">5,00</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Champignon, Basilikum</td>
-                                <td class="size size2">32cm</td>
-                                <td class="price">6,00</td>
-                            </tr>
-                            <tr>
-                                <td class="size size3">38cm</td>
-                                <td class="price">7,00</td>
-                            </tr>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                            <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(images/meals/pizza7.jpg)"></div></div>
+                            <div class="col-md-6">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="name col-12">Vegan</dd>
+                                    <dd rowspan="2" class="ingredients col-12">Tomatensauce, frische Tomaten, Basilikum</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                                    <dd class="price col-6">5,00</dd>
+                                    <dd class="size size2 col-6">32cm</dd>
+                                    <dd class="price col-6">6,00</dd>
+                                    <dd class="size size3 col-6">38cm</dd>
+                                    <dd class="price col-6">7,00</dd>
+                                </dl>
+                            </div>
                         </div>
 
-                        <div>
-                            <tr class="meal">
-                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza7.jpg')"></div></div></td>
-                                <td class="name">Vegan</td>
-                                <td class="size size1">26cm</td>
-                                <td class="price">5,00</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, frische Tomaten, Basilikum</td>
-                                <td class="size size2">32cm</td>
-                                <td class="price">6,00</td>
-                            </tr>
-                            <tr>
-                                <td class="size size3">38cm</td>
-                                <td class="price">7,00</td>
-                            </tr>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                            <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(images/meals/pizza8.jpg)"></div></div>
+                            <div class="col-md-6">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="name col-12">Mozzarella</dd>
+                                    <dd rowspan="2" class="ingredients col-12">Tomatensauce, Mozzarella, Basilikum</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                                    <dd class="price col-6">5,00</dd>
+                                    <dd class="size size2 col-6">32cm</dd>
+                                    <dd class="price col-6">6,00</dd>
+                                    <dd class="size size3 col-6">38cm</dd>
+                                    <dd class="price col-6">7,00</dd>
+                                </dl>
+                            </div>
                         </div>
 
-                        <div>
-                            <tr class="meal">
-                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza8.jpg')"></div></div></td>
-                                <td class="name">Mozarella</td>
-                                <td class="size size1">26cm</td>
-                                <td class="price">5,00</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="ingredients">Tomatensauce, Mozarella, Basilikum</td>
-                                <td class="size size2">32cm</td>
-                                <td class="price">6,00</td>
-                            </tr>
-                            <tr>
-                                <td class="size size3">38cm</td>
-                                <td class="price">7,00</td>
-                            </tr>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                            <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(images/meals/pizza1.jpg)"></div></div>
+                            <div class="col-md-6">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="name col-12">Fantastico</dd>
+                                    <dd rowspan="2" class="ingredients col-12">Tomatensauce, Käse, Schinken, Peperoni, Champignon, schwarze Oliven</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="row newDishes fullHeight">
+                                    <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                                    <dd class="price col-6">5,00</dd>
+                                    <dd class="size size2 col-6">32cm</dd>
+                                    <dd class="price col-6">6,00</dd>
+                                    <dd class="size size3 col-6">38cm</dd>
+                                    <dd class="price col-6">7,00</dd>
+                                </dl>
+                            </div>
                         </div>
-                        
-                        <div>
-                            <tr class="meal">
-                                <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url('images/meals/pizza1.jpg')"></div></div></td>
-                                <td class="name">Fantastico</td>
-                                <td class="size size1">26cm</td>
-                                <td class="price">5,00</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2" class="ingredients">Tomatensauce, Käse, Schinken, Peperoni, Champignon, schwarze Oliven</td>
-                                <td class="size size2">32cm</td>
-                                <td class="price">6,00</td>
-                            </tr>
-                            <tr>
-                                <td class="size size3">38cm</td>
-                                <td class="price">7,00</td>
-                            </tr>
-                        </div>
-                    </table>
+
+                    </div>
                 </div>
             </div>
             

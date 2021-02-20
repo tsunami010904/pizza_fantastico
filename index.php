@@ -90,12 +90,11 @@ print '<!doctype html>
         <title>Pizza Fantastico</title>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css?family=El+Messiri:500|Lobster" rel="stylesheet">
         <!-- Minh Thais links -->
-        <link rel="stylesheet" href="css/style1.css">
+        <link rel="stylesheet" href="styles/main.css">
         <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
     </head>
     <body>
@@ -299,16 +298,9 @@ print '<!doctype html>
                 <!--Dishes-->
                 <div id="menu">
                     <br><br>
-                    <table class="newDishes">
-                        <thead class="mealHead">
-                            <tr>
-                                <th colspan="2"><i>Speisekarte</i></th>
-                                <th style="font-size: 40px;">⌀</th>
-                                <th>Preis(€)</th>
-                            </tr>
-                        </thead>
+                    <div class="container">
                         '.buildDishes($pizza).'
-                    </table>
+                    </div>
                 </div>
             </div>
             
@@ -534,21 +526,25 @@ print '<!doctype html>
 
 function buildDishes(array $dishes): string 
 {
-    $template = '<tr class="meal">
-    <td rowspan="3" width="300px" class="py-2"><div class="mealItem mx-auto"><div class="mealImages" style="background-image: url(%2$s)"></div></div></td>
-    <td class="name">%1$s</td>
-    <td class="size size1">26cm</td>
-    <td class="price">%4$s</td>
-</tr>
-<tr>
-    <td rowspan="2" class="ingredients">%3$s</td>
-    <td class="size size2">32cm</td>
-    <td class="price">%5$s</td>
-</tr>
-<tr>
-    <td class="size size3">38cm</td>
-    <td class="price">%6$s</td>
-</tr>';
+    $template = '<div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                    <div class="mealItem mx-auto col-md-3"><div class="mealImages" style="background-image: url(%2$s)"></div></div>
+                    <div class="col-md-6">
+                        <dl class="row newDishes fullHeight">
+                            <dd class="name col-12">%1$s</dd>
+                            <dd rowspan="2" class="ingredients col-12">%3$s</dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-3">
+                        <dl class="row newDishes fullHeight">
+                            <dd class="size size1 col-6">26cm</dd><!--1: name; 2: img, 3: ingr; 4-6: prices-->
+                            <dd class="price col-6">%4$s</dd>
+                            <dd class="size size2 col-6">32cm</dd>
+                            <dd class="price col-6">%5$s</dd>
+                            <dd class="size size3 col-6">38cm</dd>
+                            <dd class="price col-6">%6$s</dd>
+                        </dl>
+                    </div>
+                </div>';
 
 $result = '';
 foreach($dishes as $tr) {    //Kommentar
